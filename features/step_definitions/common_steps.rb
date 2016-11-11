@@ -28,6 +28,8 @@ Then(/^this page has element "([^"]*)"$/) do |arg1|
     element = 'footer'
   when 'language selector'
     element = '#language_selector'
+  when 'brand logo'
+    element = '.navbar-brand'
   end
   expect(page).to have_css element
 end

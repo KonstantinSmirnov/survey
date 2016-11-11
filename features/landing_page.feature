@@ -4,10 +4,6 @@ Scenario: Has landing page as root
  When user visit "root page"
  Then user will see text "Survey"
 
-Scenario: Landing page has brand-logo
-  When user visit "landing page"
-  Then user will see text "Survey"
-
 Scenario: Landing page has header
   When user visit "landing page"
   Then this page has element "header"
@@ -31,7 +27,3 @@ Scenario: Landing page has testimonials section
 Scenario: Landing page has footer
   When user visit "landing page"
   Then this page has element "footer"
-
-Scenario: User can select language selector
-  When user visit "landing page"
-  Then this page has element "language selector"
