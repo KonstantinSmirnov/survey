@@ -23,19 +23,35 @@
             </div>
             <div id="registration" class="offset-sm-1 col-sm-5 landing-main-text">
               <h1>Registration</h1>
-              <form>
+
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+
                 <div class="form-group">
-                  <label for="">Email</label>
-                  <input type="email" name="name" value="" class="form-control">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, class: 'form-control' %>
                 </div>
+
                 <div class="form-group">
-                  <label for="">Password</label>
-                  <input type="password" name="name" value="" class="form-control">
+                  <%= f.label :password %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
                 </div>
+
                 <div class="form-group">
-                  <button type="button" name="button" class="btn btn-primary btn-lg">Submit</button>
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
                 </div>
-              </form>
+
+                <div class="form-group">
+                  <%= f.submit "Sign up", class: 'btn btn-primary btn-lg' %>
+                </div>
+              <% end %>
+
+              <%= render "devise/shared/links" %>
+
             </div>
           </div>
         </div>

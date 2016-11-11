@@ -1,0 +1,4 @@
+<% flash.each do |key, value| %>
+  <p class="notification alert-<%= key %>" id="flash_message"><%= value %></p>
+  <%= javascript_tag "$('#flash_message').effect('highlight',{},1000);" %>
+<% end %>
