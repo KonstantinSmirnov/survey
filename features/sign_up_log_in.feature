@@ -57,3 +57,6 @@ Feature: User registrations
     When user "Konstantin" signs in with password "123123"
     And user "Konstantin" signs out
     Then user will see text "Signed out successfully."
+
+  Scenario: User should be redirected to main page after signing up
+    
