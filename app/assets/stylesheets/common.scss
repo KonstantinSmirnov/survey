@@ -38,12 +38,20 @@ section#main {
     object-fit: cover;
   }
   .landing-main-text {
-    margin-top: 150px;
+    margin-top: 160px;
     z-index: 100;
   }
 }
 section#cover-image-indent {
   margin-top: calc(100vh - 55px);
+}
+
+section#how_we_can_help {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  i {
+    font-size: 4em;
+  }
 }
 
 footer {
