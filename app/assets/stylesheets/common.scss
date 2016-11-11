@@ -1,0 +1,16 @@
+// Place all the styles related to the Landing controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$dark: #1D2328;
+$medium: #F05024;
+$lightGray: #EBEFF3;
+$light: #FFFFFF;
+
+
+footer {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background-color: $dark;
+  color: $lightGray;
+}
