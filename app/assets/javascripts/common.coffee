@@ -1,3 +1,3 @@
 jQuery ($) ->
   $(document).on "turbolinks:load", ->
-    $(".notification").delay(3000).fadeOut()
+    $(".notification").delay(5000).fadeOut()
