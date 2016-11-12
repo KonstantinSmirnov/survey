@@ -2,6 +2,12 @@ When(/^user visit "([^"]*)"$/) do |arg1|
   case arg1
   when "root page"
     visit root_path
+  when "inexistent page"
+    visit '/inexistent_page'
+  when "404 page"
+    visit '/404'
+  when "500 page"
+    visit '/500'
   end
 end
 
