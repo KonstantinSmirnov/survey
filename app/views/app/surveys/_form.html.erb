@@ -11,3 +11,14 @@
     <%= f.submit 'Submit', class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+<% if @survey.persisted? %>
+  <div id="questions">
+    <%= render partial: 'app/questions/questions' %>
+  </div>
+  <div id="add-question">
+    <%= link_to "Add question", new_survey_question_path(@survey), remote: true, class: 'btn btn-outline-primary col-xs-12' %>
+  </div>
+<% end %>
+<br>
+<br>

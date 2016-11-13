@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   scope module: 'app' do
     get 'surveys/get_list_view', as: 'get_list_view'
     get 'surveys/get_card_view', as: 'get_card_view'
-    resources :surveys
+    resources :surveys do
+      resources :questions
+    end
   end
 
   match "/404", :to => "errors#not_found", :via => :all

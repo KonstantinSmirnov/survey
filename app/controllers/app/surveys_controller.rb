@@ -13,7 +13,7 @@ class App::SurveysController < AppController
     @survey = current_user.surveys.new(survey_params)
     if @survey.save
       flash[:success] = "New survey created!"
-      redirect_to root_path
+      redirect_to edit_survey_path(@survey)
     else
       flash[:danger] = "You entered incorrect data. Try again."
       render 'new'
@@ -22,6 +22,7 @@ class App::SurveysController < AppController
 
   def edit
     @survey = Survey.find(params[:id])
+    add_breadcrumb "#{@survey.title}", survey_path(@survey)
   end
 
   def update
@@ -37,6 +38,7 @@ class App::SurveysController < AppController
 
   def show
     @survey = Survey.find(params[:id])
+    add_breadcrumb "#{@survey.title}", survey_path(@survey)
   end
 
   def destroy
