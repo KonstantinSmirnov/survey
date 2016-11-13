@@ -48,6 +48,11 @@ section#main {
     z-index: 100;
   }
 }
+
+.main-title {
+  padding-bottom: 10px;
+}
+
 section#cover-image-indent {
   margin-top: calc(100vh);
 }
@@ -114,4 +119,10 @@ footer {
     margin: 0px 0 30px 0;
     padding: 0px 20px;
     }
+}
+
+/* SURVEY CARD */
+
+.survey-card {
+
 }

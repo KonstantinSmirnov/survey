@@ -34,3 +34,18 @@ Feature: User can work with surveys
     Given a logged in user
     And user click link "Card view"
     Then user will see text "Surveys card view"
+
+  Scenario: User can see a survey
+    Given a logged in user
+    And a survey "hello world" is created
+    And user click link "hello world"
+    Then user will see text "hello world"
+
+  Scenario: User can edit a survey
+    Given a logged in user
+    And a survey "hello world" is created
+    And user click link "Edit"
+    And user fill in "survey_title" with "test title"
+    And user fill in "survey_description" with "test description"
+    And user press button "Submit"
+    Then user will see text "Updated"

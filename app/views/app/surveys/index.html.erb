@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 text-xs-center">
-      <h1 class="">
+    <div class="col-xs-12 text-xs-center main-title">
+      <h1>
         <span class="text-xs-center">
           <%= link_to 'Create new survey', new_survey_path, class: 'btn btn-outline-primary' %>
         </span>
@@ -34,6 +34,7 @@
               <td>share</td>
               <td>link</td>
               <td>
+                <%= link_to 'Edit', edit_survey_path(survey) %>
                 <%= link_to 'Delete', survey_path(survey), method: :delete, data: { confirm: "Are you sure?" } %>
               </td>
             </tr>
@@ -44,7 +45,19 @@
       <% end %>
 
       <% if current_user.surveys_card_view? %>
-        <h1>There is card view</h1>
+        <% @surveys.each do |survey| %>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="card survey-card">
+              <div class="card-block">
+                <h4 class="card-title"><%= truncate(survey.title, length: 50) %></h4>
+                <p class="card-text"><%= truncate(survey.description, length: 100) %></p>
+                <%= link_to "Show", survey_path(survey), class: '' %>
+                <%= link_to "Edit", edit_survey_path(survey), class: ''%>
+                <%= link_to "Delete", survey_path(survey), data: { confirm: "are you sure?" }, class: ''  %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
 
     </div>
