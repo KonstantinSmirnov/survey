@@ -1,4 +1,6 @@
 class App::SurveysController < AppController
+  add_breadcrumb "Surveys", :root_path
+
   def index
     @surveys = current_user.surveys
   end

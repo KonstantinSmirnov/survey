@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # deployment
 gem 'dotenv-rails'
 
+gem "breadcrumbs_on_rails"
+
 gem 'devise'
 
 # Apearance
