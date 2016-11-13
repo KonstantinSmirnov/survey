@@ -1,0 +1,3 @@
+<% question.answers.each do |answer| %>
+  <%= render partial: 'app/answers/answer', locals: { answer: answer } %>
+<% end %>

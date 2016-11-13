@@ -135,11 +135,10 @@ footer {
   margin-bottom: 10px;
   &:hover {
     background-color: $lightGray;
-    cursor: pointer;
   }
   .question-form-delete {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -5px;
+    right: -5px;
   }
 }
