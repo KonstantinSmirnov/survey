@@ -17,6 +17,14 @@ class App::QuestionsController < AppController
     end
   end
 
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    respond_to do |format|
+      format.js { render 'destroy', locals: {id: @question.id} }
+    end
+  end
+
   private
 
   def question_params

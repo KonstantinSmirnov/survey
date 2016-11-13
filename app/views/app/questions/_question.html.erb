@@ -1,4 +1,6 @@
-<p>
+<div class="question-form" id="question-<%= question.id %>">
+  <%= link_to survey_question_path(question.survey, question), method: :delete, remote: true do %>
+    <i class="fa fa-trash question-form-delete"></i>
+  <% end %>
   <%= question.title %>
-  <%= question.question_type %>
-</p>
+</div>
