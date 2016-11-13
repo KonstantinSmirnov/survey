@@ -17,7 +17,28 @@
     <%= render partial: 'app/questions/questions' %>
   </div>
   <div id="add-question">
-    <%= link_to "Add question", new_survey_question_path(@survey), remote: true, class: 'btn btn-outline-primary col-xs-12' %>
+    <button type="button" class="btn btn-outline-primary col-xs-12" data-toggle="modal" data-target="#new-question-modal">
+      Add question
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="new-question-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Select question type</h4>
+        </div>
+        <div class="modal-body">
+          <%= link_to "Single", survey_questions_path(@survey, question_type: 'single'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+          <%= link_to "Multiply", survey_questions_path(@survey, question_type: 'multiply'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+          <%= link_to "Text", survey_questions_path(@survey, question_type: 'text'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
 <br>

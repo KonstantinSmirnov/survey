@@ -1,15 +1,16 @@
 class App::QuestionsController < AppController
-  def new
-    @survey = Survey.find(params[:survey_id])
-    @question = @survey.questions.new(title: 'Write here your question')
-    respond_to do |format|
-      format.js { render 'new' }
-    end
-  end
 
   def create
     @survey = Survey.find(params[:survey_id])
-    @question = @survey.questions.new(question_params)
+    @question = @survey.questions.new(title: 'Write here your question')
+    case params[:question_type]
+    when "single"
+      @question.single!
+    when "multiply"
+      @question.multiply!
+    when "text"
+      @question.text!
+    end
     @question.save
     respond_to do |format|
       format.js { render 'create' }

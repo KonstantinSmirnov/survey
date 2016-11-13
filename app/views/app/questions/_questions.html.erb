@@ -1,5 +1,3 @@
 <% @survey.questions.each do |question| %>
-  <p>
-    <%= question.title %>
-  </p>
+  <%= render partial: 'app/questions/question', locals: { question: question } %>
 <% end %>
