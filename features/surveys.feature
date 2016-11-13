@@ -24,3 +24,13 @@ Feature: User can work with surveys
     And a survey is created
     And user click link "Delete"
     Then user will see text "Deleted"
+
+  Scenario: User can switch to surveys list view
+    Given a logged in user
+    And user click link "List view"
+    Then user will see text "Surveys list view"
+
+  Scenario: User can switch to surveys card view
+    Given a logged in user
+    And user click link "Card view"
+    Then user will see text "Surveys card view"

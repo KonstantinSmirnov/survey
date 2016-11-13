@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   scope module: 'app' do
+    get 'surveys/get_list_view', as: 'get_list_view'
+    get 'surveys/get_card_view', as: 'get_card_view'
     resources :surveys
   end
 

@@ -29,6 +29,18 @@ class App::SurveysController < AppController
     redirect_to surveys_path
   end
 
+  def get_list_view
+    current_user.surveys_list_view!
+    flash[:success] = "Surveys list view"
+    redirect_to surveys_path
+  end
+
+  def get_card_view
+    current_user.surveys_card_view!
+    flash[:success] = "Surveys card view"
+    redirect_to surveys_path
+  end
+
   private
 
   def survey_params

@@ -2,17 +2,20 @@
   <div class="row">
     <div class="col-xs-12 text-xs-center">
       <h1 class="">
-        Surveys
         <span class="text-xs-center">
-          <%= link_to 'Create new', new_survey_path, class: 'btn btn-outline-primary' %>
+          <%= link_to 'Create new survey', new_survey_path, class: 'btn btn-outline-primary' %>
         </span>
       </h1>
-
       <span>
-        <a href="#" class="active">List view</a> | <a href="#" class="">Card view</a>
+        <%= link_to "List view", get_list_view_path, class: "#{'active' if current_user.surveys_list_view?}" %>
+        |
+        <%= link_to "Card view", get_card_view_path, class: "#{'active' if current_user.surveys_card_view?}" %>
       </span>
     </div>
     <div class="col-xs-12">
+
+      <% if current_user.surveys_list_view? %>
+      <!-- TABLE VIEW -->
       <table class="table table-hover">
         <thead class="thead-default">
           <tr>
@@ -37,6 +40,13 @@
           <% end %>
         </tbody>
       </table>
+      <!-- END TABLE VIEW -->
+      <% end %>
+
+      <% if current_user.surveys_card_view? %>
+        <h1>There is card view</h1>
+      <% end %>
+
     </div>
   </div>
 </div>
