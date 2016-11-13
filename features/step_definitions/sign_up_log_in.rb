@@ -1,11 +1,3 @@
-When(/^user fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
-  fill_in arg1, with: arg2
-end
-
-When(/^user press button "([^"]*)"$/) do |arg1|
-  click_button arg1
-end
-
 Given(/^the user "([^"]*)" with password "([^"]*)"$/) do |arg1, arg2|
   visit root_path
   email = arg1.downcase + "@example.com"
@@ -28,4 +20,21 @@ end
 
 When(/^user "([^"]*)" signs out$/) do |arg1|
   click_link 'Sign out'
+end
+
+Given(/^a logged in user$/) do
+  visit root_path
+  email = "test@example.com"
+  password = "123123"
+  fill_in 'user_email', with: email
+  fill_in 'user_password', with: password
+  fill_in 'user_password_confirmation', with: password
+  click_button 'Sign up'
+  user = User.find_by_email(email)
+  user.confirmed_at = Time.now
+  user.save
+  visit new_user_session_path
+  fill_in 'user_email', with: email
+  fill_in 'user_password', with: password
+  click_button 'Log in'
 end

@@ -9,6 +9,12 @@ $light: #FFFFFF;
 
 nav.navbar {
   z-index: 100;
+  .nav-item.active > a {
+    color: $medium;
+  }
+}
+.active {
+  color: $medium;
 }
 
 section#main {

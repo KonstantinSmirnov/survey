@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-xs-center">
+      <h1 class="">
+        Surveys
+        <span class="text-xs-center">
+          <%= link_to 'Create new', new_survey_path, class: 'btn btn-outline-primary' %>
+        </span>
+      </h1>
+
+      <span>
+        <a href="#" class="active">List view</a> | <a href="#" class="">Card view</a>
+      </span>
+    </div>
+    <div class="col-xs-12">
+      <table class="table table-hover">
+        <thead class="thead-default">
+          <tr>
+            <th>Title</th>
+            <th>Responses</th>
+            <th>Share</th>
+            <th>Analyze</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @surveys.each do |survey| %>
+            <tr>
+              <td><%= link_to truncate(survey.title, length: 50), survey_path(survey) %></td>
+              <td>0</td>
+              <td>share</td>
+              <td>link</td>
+              <td>
+                <%= link_to 'Delete', survey_path(survey), method: :delete, data: { confirm: "Are you sure?" } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

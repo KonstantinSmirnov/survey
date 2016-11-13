@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
   authenticated :user do
-    root 'app/dashboard#index'
+    root 'app/surveys#index'
   end
 
   root 'landing#index'
 
   scope module: 'app' do
-    get '/dashboard' => 'app/dashboard#index', as: 'dashboard'
+    resources :surveys
   end
 
   match "/404", :to => "errors#not_found", :via => :all

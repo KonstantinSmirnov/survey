@@ -37,3 +37,15 @@ Then(/^this page has element "([^"]*)"$/) do |arg1|
   end
   expect(page).to have_css element
 end
+
+When(/^user fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
+  fill_in arg1, with: arg2
+end
+
+When(/^user press button "([^"]*)"$/) do |arg1|
+  click_button arg1
+end
+
+When(/^user click link "([^"]*)"$/) do |arg1|
+  click_link arg1
+end

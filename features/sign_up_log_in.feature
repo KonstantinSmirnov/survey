@@ -59,4 +59,6 @@ Feature: User registrations
     Then user will see text "Signed out successfully."
 
   Scenario: User should be redirected to main page after signing up
-    
+    Given the user "Konstantin" with password "123123"
+    When user "Konstantin" signs in with password "123123"
+    Then user will see text "My Surveys"
