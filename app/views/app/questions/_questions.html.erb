@@ -1,3 +1,5 @@
 <% @survey.questions.each do |question| %>
-  <%= render partial: 'app/questions/question', locals: { question: question } %>
+  <div id="question-<%= question.id %>" class="question-form">
+    <%= render partial: 'app/questions/question', locals: { question: question } %>
+  </div>
 <% end %>

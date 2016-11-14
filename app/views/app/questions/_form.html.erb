@@ -1,11 +1,23 @@
-<div id="add-question-form">
-  <%= form_for [@survey, @question], :remote => true do |f| %>
+  <%= link_to survey_question_path(question.survey, question), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+    <i class="fa fa-trash question-form-delete"></i>
+  <% end %>
+  <%= form_for [question.survey, question], html: { multipart: true }, :remote => true do |f| %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, autocomplete: 'off', class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.submit %>
+      <%= f.label :answers %>
+      <div id="question-<%= question.id %>-answers">
+        <%= f.fields_for :answers do |answer| %>
+          <div id="answer-<%= answer.object.id %>">
+            <%= render partial: 'app/answers/answer_fields', locals: { f: answer } %>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to "Add answer", survey_question_answers_path(question.survey, question), method: :post, remote: true %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Update", class: 'btn btn-outline-primary' %>
     </div>
   <% end %>
-</div>

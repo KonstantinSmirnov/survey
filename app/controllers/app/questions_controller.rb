@@ -6,6 +6,7 @@ class App::QuestionsController < AppController
     case params[:question_type]
     when "single"
       @question.single!
+      3.times { @question.answers.create(title: "This is an answer") }
     when "multiply"
       @question.multiply!
     when "text"
@@ -13,7 +14,27 @@ class App::QuestionsController < AppController
     end
     @question.save
     respond_to do |format|
-      format.js { render 'create' }
+      format.js { render 'create', locals: { question: @question } }
+    end
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+    respond_to do |format|
+      format.js { render 'edit', locals: { question: @question } }
+    end
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    respond_to do |format|
+      if @question.save
+        flash.now[:success] = "Updated"
+        format.js { render 'update', locals: { question: @question } }
+      else
+        flash.now[:danger] = "Could not update"
+        format.js { render 'error_message' }
+      end
     end
   end
 

@@ -1,1 +1,11 @@
-$("#question-<%= id %>-answers").append("<%= escape_javascript(render partial: 'answer', locals: { answer: @answer }) %>");
+<%
+  @question = Question.find(params[:question_id])
+  new_answer = @question.answers.create(title: 'This is an answer')
+  form_for [@question.survey, @question] do |f|
+    f.fields_for(:answers) do |builder|
+      @answer = builder
+    end
+  end
+%>
+
+$("#question-<%= @question.id %>-answers").append("<%= escape_javascript(render partial: 'answer_fields', locals: { f: @answer }) %>");
