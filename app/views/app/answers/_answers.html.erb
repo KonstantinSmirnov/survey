@@ -1,3 +1,5 @@
-<% question.answers.each do |answer| %>
-  <%= render partial: 'app/answers/answer', locals: { answer: answer } %>
-<% end %>
+<fieldset class="form-group">
+  <% question.answers.each do |answer| %>
+    <%= render partial: 'app/answers/answer', locals: { answer: answer } %>
+  <% end %>
+</fieldset>
