@@ -1,5 +1,13 @@
 class App::QuestionsController < AppController
 
+  def show
+    @question = Question.find(params[:id])
+
+    respond_to do |format|
+      format.js { render 'show', locals: { question: @question } }
+    end
+  end
+
   def create
     @survey = Survey.find(params[:survey_id])
     @question = @survey.questions.new(title: 'Write here your question')

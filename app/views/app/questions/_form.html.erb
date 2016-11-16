@@ -19,5 +19,6 @@
     </div>
     <div class="form-group">
       <%= f.submit "Save", class: 'btn btn-outline-primary' %>
+      <%= link_to "Cancel", survey_question_path(question.survey, question), remote: true, class: 'btn btn-outline-secondary' %>
     </div>
   <% end %>
