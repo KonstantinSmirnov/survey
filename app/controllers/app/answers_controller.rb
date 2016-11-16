@@ -1,11 +1,10 @@
 class App::AnswersController < AppController
 
-  def create
+  def new
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(title: 'Write here your answer')
-    @answer.save
     respond_to do |format|
-      format.js { render 'create', locals: {id: @question.id} }
+      format.js { render 'new', locals: { id: Time.now, answer: @answer } }
     end
   end
 
@@ -13,7 +12,7 @@ class App::AnswersController < AppController
     @answer = Answer.find(params[:id])
     @answer.destroy
     respond_to do |format|
-      format.js { render 'destroy', locals: {id: @answer.id} }
+      format.js { render 'destroy', locals: { answer: @answer } }
     end
   end
 

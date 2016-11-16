@@ -1,8 +1,8 @@
 <%
   @question = Question.find(params[:question_id])
-  new_answer = @question.answers.create(title: 'This is an answer')
+  new_answer = @question.answers.build(title: 'This is an answer')
   form_for [@question.survey, @question] do |f|
-    f.fields_for(:answers) do |builder|
+    f.fields_for(:answers, new_answer, :child_index => Time.now.to_i) do |builder|
       @answer = builder
     end
   end

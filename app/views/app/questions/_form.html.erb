@@ -15,9 +15,9 @@
           </div>
         <% end %>
       </div>
-      <%= link_to "Add answer", survey_question_answers_path(question.survey, question), method: :post, remote: true %>
+      <%= link_to "Add answer", new_survey_question_answer_path(question.survey, question, question.answers.new), remote: true %>
     </div>
     <div class="form-group">
-      <%= f.submit "Update", class: 'btn btn-outline-primary' %>
+      <%= f.submit "Save", class: 'btn btn-outline-primary' %>
     </div>
   <% end %>

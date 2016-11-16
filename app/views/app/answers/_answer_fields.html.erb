@@ -3,9 +3,9 @@
     <input type="radio">
   </span>
   <%= f.text_field :title, class: 'form-control' %>
-  <span class="input-group-btn">
-    <%= link_to survey_question_answer_path(f.object.question.survey, f.object.question, f.object), method: :delete, remote: true, class: 'btn btn-secondary' do %>
-      <i class="fa fa-trash"></i>
-    <% end %>
+  <%= f.hidden_field :_destroy %>
+  <span class="delete_answer input-group-addon">
+    <i class="fa fa-close"></i>
   </span>
+
 </div>
