@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get 'surveys/get_list_view', as: 'get_list_view'
     get 'surveys/get_card_view', as: 'get_card_view'
     resources :surveys do
+      get 'surveys/activate', as: 'activate'
       resources :questions do
         resources :answers
       end

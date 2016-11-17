@@ -1,0 +1,12 @@
+<div class="card survey-card">
+  <div class="card-block">
+    <h4 class="card-title"><%= truncate(survey.title, length: 50) %></h4>
+    <p class="card-text"><%= truncate(survey.description, length: 100) %></p>
+    <%= link_to "Preview", survey_path(survey), class: '' %>
+    <%= link_to "Edit", edit_survey_path(survey), class: ''%>
+    <%= link_to "Delete", survey_path(survey), data: { confirm: "are you sure?" }, class: ''  %>
+    <%= link_to survey_activate_path(survey), remote: true do %>
+      <%= survey.active? ? 'active' : 'inactive' %>
+    <% end %>
+  </div>
+</div>

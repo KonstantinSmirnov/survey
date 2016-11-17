@@ -1,0 +1,1 @@
+$("#survey-<%= survey.id %>").html("<%= escape_javascript(render partial: (current_user.surveys_list_view? ? 'survey_list_element' : 'survey_card_element'), locals: { survey: survey }) %>");

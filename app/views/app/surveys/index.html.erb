@@ -23,19 +23,14 @@
             <th>Responses</th>
             <th>Share</th>
             <th>Analyze</th>
+            <th>Activate</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <% @surveys.each do |survey| %>
-            <tr>
-              <td><%= link_to truncate(survey.title, length: 50), edit_survey_path(survey) %></td>
-              <td>0</td>
-              <td>share</td>
-              <td>link</td>
-              <td>
-                <%= link_to 'Delete', survey_path(survey), method: :delete, data: { confirm: "Are you sure?" } %>
-              </td>
+            <tr id="survey-<%= survey.id %>">
+              <%= render partial: 'survey_list_element', locals: { survey: survey } %>
             </tr>
           <% end %>
         </tbody>
@@ -44,17 +39,10 @@
       <% end %>
 
       <% if current_user.surveys_card_view? %>
+      <!-- SURVEYS CARD VIEW -->
         <% @surveys.each do |survey| %>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card survey-card">
-              <div class="card-block">
-                <h4 class="card-title"><%= truncate(survey.title, length: 50) %></h4>
-                <p class="card-text"><%= truncate(survey.description, length: 100) %></p>
-                <%= link_to "Preview", survey_path(survey), class: '' %>
-                <%= link_to "Edit", edit_survey_path(survey), class: ''%>
-                <%= link_to "Delete", survey_path(survey), data: { confirm: "are you sure?" }, class: ''  %>
-              </div>
-            </div>
+          <div class="col-xs-12 col-sm-6 col-md-3" id="survey-<%= survey.id %>">
+            <%= render partial: 'survey_card_element', locals: { survey: survey } %>
           </div>
         <% end %>
       <% end %>

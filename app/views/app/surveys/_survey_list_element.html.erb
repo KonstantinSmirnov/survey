@@ -1,0 +1,12 @@
+<td><%= link_to truncate(survey.title, length: 50), edit_survey_path(survey) %></td>
+<td>0</td>
+<td>share</td>
+<td>link</td>
+<td>
+  <%= link_to survey_activate_path(survey), remote: true do %>
+    <%= survey.active? ? 'active' : 'inactive' %>
+  <% end %>
+</td>
+<td>
+  <%= link_to 'Delete', survey_path(survey), method: :delete, data: { confirm: "Are you sure?" } %>
+</td>

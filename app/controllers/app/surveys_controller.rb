@@ -60,6 +60,14 @@ class App::SurveysController < AppController
     redirect_to surveys_path
   end
 
+  def activate
+    @survey = Survey.find(params[:survey_id])
+    @survey.active? ? @survey.inactive! : @survey.active!
+    respond_to do |format|
+      format.js { render 'activate', locals: { survey: @survey } }
+    end
+  end
+
   private
 
   def survey_params
