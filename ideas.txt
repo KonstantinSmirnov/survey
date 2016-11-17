@@ -29,7 +29,10 @@
 ## Answer
 - [ ] answer text
 - [ ] answer choice
- 
+
 ## Answer choice
 - [ ] belongs_to Answer
 - [ ] belongs_to question choice
+
+- each question has its weight in points
+- and answer if multiply
