@@ -147,3 +147,11 @@ footer {
     right: 15px;
   }
 }
+.card {
+  position: relative;
+  .card-delete {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+  }
+}
