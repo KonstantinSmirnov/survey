@@ -6,6 +6,20 @@
       </h1>
       <hr>
       <%= @survey.description %>
+      <hr>
+      <% @survey.questions.each do |question| %>
+        <div class="form-group">
+          <h3>
+            <%= question.title %>
+          </h3>
+        </div>
+        <fieldset class="form-group">
+          <% question.answers.each do |answer| %>
+            <%= render partial: 'app/answers/answer', locals: { answer: answer } %>
+          <% end %>
+        </fieldset>
+      <% end %>
+      <button type="button" name="button" class="btn btn-primary">Done!</button>
     </div>
   </div>
 </div>

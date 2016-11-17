@@ -13,40 +13,44 @@
       </span>
     </div>
     <div class="col-xs-12">
-
-      <% if current_user.surveys_list_view? %>
-      <!-- TABLE VIEW -->
-      <table class="table table-hover">
-        <thead class="thead-default">
-          <tr>
-            <th>Title</th>
-            <th>Responses</th>
-            <th>Share</th>
-            <th>Analyze</th>
-            <th>Activate</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @surveys.each do |survey| %>
-            <tr id="survey-<%= survey.id %>">
-              <%= render partial: 'survey_list_element', locals: { survey: survey } %>
+      <% unless current_user.surveys.any? %>
+        <h5 class="text-xs-center">
+          There are no surveys yet, but you can create one!
+        </h5>
+      <% else %>
+        <% if current_user.surveys_list_view? %>
+        <!-- TABLE VIEW -->
+        <table class="table table-hover">
+          <thead class="thead-default">
+            <tr>
+              <th>Title</th>
+              <th>Responses</th>
+              <th>Share</th>
+              <th>Analyze</th>
+              <th>Activate</th>
+              <th></th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <!-- END TABLE VIEW -->
-      <% end %>
+          </thead>
+          <tbody>
+            <% @surveys.each do |survey| %>
+              <tr id="survey-<%= survey.id %>">
+                <%= render partial: 'survey_list_element', locals: { survey: survey } %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <!-- END TABLE VIEW -->
+        <% end %>
 
-      <% if current_user.surveys_card_view? %>
-      <!-- SURVEYS CARD VIEW -->
-        <% @surveys.each do |survey| %>
-          <div class="col-xs-12 col-sm-6 col-md-3" id="survey-<%= survey.id %>">
-            <%= render partial: 'survey_card_element', locals: { survey: survey } %>
-          </div>
+        <% if current_user.surveys_card_view? %>
+        <!-- SURVEYS CARD VIEW -->
+          <% @surveys.each do |survey| %>
+            <div class="col-xs-12 col-sm-6 col-md-3" id="survey-<%= survey.id %>">
+              <%= render partial: 'survey_card_element', locals: { survey: survey } %>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
-
     </div>
   </div>
 </div>

@@ -22,7 +22,7 @@ class App::SurveysController < AppController
 
   def edit
     @survey = Survey.find(params[:id])
-    add_breadcrumb "#{@survey.title}", survey_path(@survey)
+    add_breadcrumb "Edit: #{@survey.title}"
   end
 
   def update
@@ -38,7 +38,7 @@ class App::SurveysController < AppController
 
   def show
     @survey = Survey.find(params[:id])
-    add_breadcrumb "#{@survey.title}", survey_path(@survey)
+    add_breadcrumb "#{@survey.title}"
   end
 
   def destroy
