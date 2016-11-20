@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope module: 'app' do
     get 'surveys/get_list_view', as: 'get_list_view'
     get 'surveys/get_card_view', as: 'get_card_view'
+    get 'surveys/:id/edit_header', to: 'surveys#edit_header', as: 'edit_survey_header'
     resources :surveys do
       get 'surveys/activate', as: 'activate'
       resources :questions do

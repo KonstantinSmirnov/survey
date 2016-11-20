@@ -1,16 +1,10 @@
-<%= form_for @survey do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, autocomplete: 'off', class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, autocomplete: 'off', class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.submit 'Submit', class: 'btn btn-primary' %>
-  </div>
-<% end %>
+<div id="survey-header" class="question-form">
+  <% unless @survey.persisted? %>
+    <%= render partial: 'survey_header_form', locals: { survey: @survey } %>
+  <% else %>
+    <%= render partial: 'survey_header', locals: { survey: @survey } %>
+  <% end %>
+</div>
 
 <% if @survey.persisted? %>
   <div id="questions">

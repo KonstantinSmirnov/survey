@@ -29,7 +29,7 @@ class App::SurveysController < AppController
     @survey = Survey.find(params[:id])
     if @survey.update_attributes(survey_params)
       flash[:success] = "Updated"
-      redirect_to @survey
+      redirect_to edit_survey_path(@survey)
     else
       flash.now[:danger] = "Can not be updated"
       render 'edit'
@@ -63,8 +63,17 @@ class App::SurveysController < AppController
   def activate
     @survey = Survey.find(params[:survey_id])
     @survey.active? ? @survey.inactive! : @survey.active!
+
     respond_to do |format|
       format.js { render 'activate', locals: { survey: @survey } }
+    end
+  end
+
+  def edit_header
+    @survey = Survey.find(params[:id])
+
+    respond_to do |format|
+      format.js { render 'edit_header', locals: { survey: @survey } }
     end
   end
 
