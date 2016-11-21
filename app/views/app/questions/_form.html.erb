@@ -1,7 +1,7 @@
-  <%= link_to survey_question_path(question.survey, question), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+  <%= link_to app_survey_question_path(question.survey, question), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
     <i class="fa fa-trash question-form-delete"></i>
   <% end %>
-  <%= form_for [question.survey, question], html: { multipart: true }, :remote => true do |f| %>
+  <%= form_for [:app, question.survey, question], html: { multipart: true }, :remote => true do |f| %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, autocomplete: 'off', class: 'form-control' %>
@@ -15,10 +15,10 @@
           </div>
         <% end %>
       </div>
-      <%= link_to "Add answer", new_survey_question_answer_path(question.survey, question, question.answers.new), remote: true %>
+      <%= link_to "Add answer", new_app_survey_question_answer_path(question.survey, question, question.answers.new), remote: true %>
     </div>
     <div class="form-group">
       <%= f.submit "Save", class: 'btn btn-outline-primary' %>
-      <%= link_to "Cancel", survey_question_path(question.survey, question), remote: true, class: 'btn btn-outline-secondary' %>
+      <%= link_to "Cancel", app_survey_question_path(question.survey, question), remote: true, class: 'btn btn-outline-secondary' %>
     </div>
   <% end %>

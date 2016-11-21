@@ -3,13 +3,13 @@
     <div class="col-xs-12 text-xs-center main-title">
       <h1>
         <span class="text-xs-center">
-          <%= link_to 'Create new survey', new_survey_path, class: 'btn btn-outline-primary' %>
+          <%= link_to 'Create new survey', new_app_survey_path, class: 'btn btn-outline-primary' %>
         </span>
       </h1>
       <span>
-        <%= link_to "List view", get_list_view_path, class: "#{'active' if current_user.surveys_list_view?}" %>
+        <%= link_to "List view", app_get_list_view_path, class: "#{'active' if current_user.surveys_list_view?}" %>
         |
-        <%= link_to "Card view", get_card_view_path, class: "#{'active' if current_user.surveys_card_view?}" %>
+        <%= link_to "Card view", app_get_card_view_path, class: "#{'active' if current_user.surveys_card_view?}" %>
       </span>
     </div>
     <div class="col-xs-12">

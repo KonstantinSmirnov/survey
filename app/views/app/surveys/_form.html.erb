@@ -27,9 +27,9 @@
           <h4 class="modal-title" id="myModalLabel">Select question type</h4>
         </div>
         <div class="modal-body">
-          <%= link_to "Single", survey_questions_path(@survey, question_type: 'single'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
-          <%= link_to "Multiply", survey_questions_path(@survey, question_type: 'multiply'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
-          <%= link_to "Text", survey_questions_path(@survey, question_type: 'text'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+          <%= link_to "Single", app_survey_questions_path(@survey, question_type: 'single'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+          <%= link_to "Multiply", app_survey_questions_path(@survey, question_type: 'multiply'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+          <%= link_to "Text", app_survey_questions_path(@survey, question_type: 'text'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
         </div>
       </div>
     </div>
