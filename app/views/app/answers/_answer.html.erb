@@ -1,6 +1,16 @@
-<div class="form-check">
-  <label class="form-check-label">
-    <input type="radio" class="form-check-input" name="optionsRadios">
-    <%= answer.title %>
-  </label>
-</div>
+<% case answer.question.question_type %>
+<% when "single" %>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optionsRadios">
+      <%= answer.title %>
+    </label>
+  </div>
+<% when "multiply" %>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" value="">
+      <%= answer.title %>
+    </label>
+  </div>
+<% end %>

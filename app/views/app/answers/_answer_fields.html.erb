@@ -1,3 +1,5 @@
+<% case f.object.question.question_type %>
+<% when "single" %>
 <div class="input-group">
   <span class="input-group-addon">
     <input type="radio">
@@ -7,5 +9,16 @@
   <span class="delete_answer input-group-addon">
     <i class="fa fa-close"></i>
   </span>
-
 </div>
+<% when "multiply" %>
+<div class="input-group">
+  <span class="input-group-addon">
+    <input type="checkbox">
+  </span>
+  <%= f.text_field :title, class: 'form-control' %>
+  <%= f.hidden_field :_destroy %>
+  <span class="delete_answer input-group-addon">
+    <i class="fa fa-close"></i>
+  </span>
+</div>
+<% end %>

@@ -17,8 +17,10 @@ class App::QuestionsController < AppController
       3.times { @question.answers.create(title: "This is an answer") }
     when "multiply"
       @question.multiply!
+      3.times { @question.answers.create(title: "This is an answer") }
     when "text"
       @question.text!
+      @question.answers.create(title: "This is an answer")
     end
     @question.save
     respond_to do |format|

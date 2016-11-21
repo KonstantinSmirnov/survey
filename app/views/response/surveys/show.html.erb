@@ -4,6 +4,28 @@
 
       <p>
         Here need to add a simple html form with action to rails controller!
+        <form accept-charset="UTF-8" method='post' action='/first/save'>
+
+        <label for='S.No'>S.No</label>
+            <input type="text" name="s_no" placeholder='Enter s. no.'>
+        <label for='name'>Name</label>
+            <input type="text" name='name' placeholder='Enter your name'> <br>
+        <label for='seller_id'>Seller ID</label>
+            <input type="text" name='seller_id' placeholder='Enter your seller ID'> <br>
+        <label for='email'>Email</label>
+            <input type="email" name='email' placeholder='Enter your email'> <br>
+        <label for='img_url'>Image</label>
+            <input type='text' name='img_url' placeholder='Enter your image url'> <br>
+            <input type="submit" name='save' value='Save'>
+            def save
+              @name = params[:name]
+              @email = params[:email]
+              @seller_id = params[:seller_id]
+              @img_url = params[:img_url]
+              @s_no = params[:s_no]
+            end
+            post 'first/save'
+        </form>
       </p>
 
       <% if @survey.active? %>

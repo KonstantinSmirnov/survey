@@ -1,35 +1,25 @@
+<%= link_to app_survey_question_path(question.survey, question), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+  <i class="fa fa-trash question-form-delete"></i>
+<% end %>
+<%= link_to edit_app_survey_question_path(question.survey, question), remote: true do %>
+  <i class="fa fa-pencil question-form-edit"></i>
+<% end %>
+
+<div class="form-group">
+  <h3><%= question.title %></h3>
+</div>
+
 <% case question.question_type %>
 <% when "single" %>
-    <%= link_to app_survey_question_path(question.survey, question), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
-      <i class="fa fa-trash question-form-delete"></i>
-    <% end %>
-    <%= link_to edit_app_survey_question_path(question.survey, question), remote: true do %>
-      <i class="fa fa-pencil question-form-edit"></i>
-    <% end %>
-    <%= form_for [:app, question.survey, question] do |f| %>
-      <div class="form-group">
-        <h3><%= question.title %></h3>
-      </div>
-    <% end %>
-    <div id="question-<%= question.id %>-answers">
-      <%= render partial: 'app/answers/answers', locals: {question: question} %>
-    </div>
+  <div id="question-<%= question.id %>-answers">
+    <%= render partial: 'app/answers/answers', locals: {question: question} %>
+  </div>
 <% when "multiply" %>
-  <div class="question-form" id="question-<%= question.id %>">
-    <%= link_to app_survey_question_path(question.survey, question), method: :delete, remote: true do %>
-      <i class="fa fa-trash question-form-delete"></i>
-    <% end %>
-    <p>
-      <%= question.title %>
-    </p>
+  <div id="question-<%= question.id %>-answers">
+    <%= render partial: 'app/answers/answers', locals: {question: question} %>
   </div>
 <% when "text" %>
-  <div class="question-form" id="question-<%= question.id %>">
-    <%= link_to app_survey_question_path(question.survey, question), method: :delete, remote: true do %>
-      <i class="fa fa-trash question-form-delete"></i>
-    <% end %>
-    <p>
-      <%= question.title %>
-    </p>
-  </div>
+  <p>
+    There are answers
+  </p>
 <% end %>
