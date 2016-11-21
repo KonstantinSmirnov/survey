@@ -125,6 +125,7 @@ footer {
 .question-form {
   position: relative;
   border: 1px solid $lightGray;
+  border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
   &:hover {
