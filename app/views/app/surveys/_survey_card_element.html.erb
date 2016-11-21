@@ -3,8 +3,11 @@
     <h4 class="card-title">
       <%= link_to "#{truncate(survey.title, length: 50)}", edit_app_survey_path(survey), class: ''%>
     </h4>
+    <p>
+      <%= link_to "test", survey_path(survey.encrypted_link) %>
+    </p>
     <p class="card-text"><%= truncate(survey.description, length: 100) %></p>
-    <%= link_to "Preview", survey_path(survey), class: '' %>
+    <%= link_to "Preview", app_survey_path(survey), class: '' %>
     <%= link_to app_survey_activate_path(survey), remote: true do %>
       <%= survey.active? ? 'active' : 'inactive' %>
     <% end %>
