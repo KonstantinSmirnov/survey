@@ -1,5 +1,43 @@
-<% if @survey.active? %>
-  <%= @survey.title %>
-<% else %>
-  <p>This survey is inactive</p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <p>
+        Here need to add a simple html form with action to rails controller!
+      </p>
+
+      <% if @survey.active? %>
+
+        <h1>
+          <%= @survey.title %>
+        </h1>
+        <hr>
+        <%= @survey.description %>
+        <hr>
+        <% @survey.questions.each do |question| %>
+          <div class="form-group">
+            <h3>
+              <%= question.title %>
+            </h3>
+          </div>
+          <fieldset class="form-group">
+            <% question.answers.each do |answer| %>
+              <%= render partial: 'app/answers/answer', locals: { answer: answer } %>
+            <% end %>
+          </fieldset>
+        <% end %>
+        <button type="button" name="button" class="btn btn-primary">Done!</button>
+
+      <% else %>
+        <div id="page_error">
+          <div class="error_message text-xs-center">
+            <div class="four-oh-four"><h1>Well...</h1></div>
+            <div class="warning">
+              <h2>This survey is inactive :(</h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
