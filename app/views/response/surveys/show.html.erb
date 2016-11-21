@@ -1,1 +1,5 @@
-<%= @survey.title %>
+<% if @survey.active? %>
+  <%= @survey.title %>
+<% else %>
+  <p>This survey is inactive</p>
+<% end %>
