@@ -8,7 +8,7 @@ class Survey < ApplicationRecord
 
   belongs_to :user
   has_many :questions
-  
+
   private
 
   def generate_encrypted_link
