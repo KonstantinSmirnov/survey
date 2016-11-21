@@ -8,7 +8,7 @@
     <% end %>
     <%= form_for [question.survey, question] do |f| %>
       <div class="form-group">
-        <%= question.title %>
+        <h3><%= question.title %></h3>
       </div>
     <% end %>
     <div id="question-<%= question.id %>-answers">
