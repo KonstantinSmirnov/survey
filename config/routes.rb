@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
   
-  namespace :response do
+  scope module: 'response' do
     resources :surveys, only: [:show]
   end
 
