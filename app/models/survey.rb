@@ -12,6 +12,6 @@ class Survey < ApplicationRecord
   private
 
   def generate_encrypted_link
-    self.encrypted_link = SecureRandom.urlsafe_base64(10)
+    self.encrypted_link = SecureRandom.uuid
   end
 end
