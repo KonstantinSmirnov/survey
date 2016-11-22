@@ -1,5 +1,4 @@
 class Question < ApplicationRecord
-  validates :title, presence: true
 
   enum question_type: [:single, :multiply, :text]
 

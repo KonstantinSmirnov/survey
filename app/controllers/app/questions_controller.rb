@@ -10,17 +10,17 @@ class App::QuestionsController < AppController
 
   def create
     @survey = Survey.find(params[:survey_id])
-    @question = @survey.questions.new(title: 'Write here your question')
+    @question = @survey.questions.new(title: '')
     case params[:question_type]
     when "single"
       @question.single!
-      3.times { @question.answers.create(title: "This is an answer") }
+      3.times { @question.answers.create(title: "") }
     when "multiply"
       @question.multiply!
-      3.times { @question.answers.create(title: "This is an answer") }
+      3.times { @question.answers.create(title: "") }
     when "text"
       @question.text!
-      @question.answers.create(title: "This is an answer")
+      @question.answers.create(title: "")
     end
     @question.save
     respond_to do |format|

@@ -6,7 +6,7 @@
 <% end %>
 
 <div class="form-group">
-  <h3><%= question.title %></h3>
+  <h3><%= question.title.present? ? question.title : 'Fill in this question title' %></h3>
 </div>
 
 <% case question.question_type %>
@@ -19,7 +19,7 @@
     <%= render partial: 'app/answers/answers', locals: {question: question} %>
   </div>
 <% when "text" %>
-  <p>
-    There are answers
-  </p>
+  <div id="question-<%= question.id %>-answers">
+    <%= render partial: 'app/answers/answers', locals: {question: question} %>
+  </div>
 <% end %>
