@@ -14,13 +14,13 @@ class App::QuestionsController < AppController
     case params[:question_type]
     when "single"
       @question.single!
-      3.times { @question.answers.create(title: "") }
+      3.times { @question.answer_variants.create(title: "") }
     when "multiply"
       @question.multiply!
-      3.times { @question.answers.create(title: "") }
+      3.times { @question.answer_variants.create(title: "") }
     when "text"
       @question.text!
-      @question.answers.create(title: "")
+      @question.answer_variants.create(title: "")
     end
     @question.save
     respond_to do |format|
@@ -60,7 +60,7 @@ class App::QuestionsController < AppController
 
   def question_params
     params.require(:question).permit(:title,
-      :answers_attributes => [:id, :title, :_destroy]
+      :answer_variants_attributes => [:id, :title, :_destroy]
                                     )
   end
 end

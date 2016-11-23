@@ -4,9 +4,9 @@
   <span class="input-group-addon">
     <input type="radio">
   </span>
-  <%= f.text_field :title, class: 'form-control', placeholder: 'Write here your answer' %>
+  <%= f.text_field :title, class: 'form-control', autocomplete: 'off', placeholder: 'Write here your answer variant' %>
   <%= f.hidden_field :_destroy %>
-  <span class="delete_answer input-group-addon">
+  <span class="delete_answer_variant input-group-addon">
     <i class="fa fa-close"></i>
   </span>
 </div>
@@ -15,15 +15,15 @@
   <span class="input-group-addon">
     <input type="checkbox">
   </span>
-  <%= f.text_field :title, class: 'form-control', placeholder: 'Write here your answer' %>
+  <%= f.text_field :title, class: 'form-control', autocomplete: 'off', placeholder: 'Write here your answer variant' %>
   <%= f.hidden_field :_destroy %>
-  <span class="delete_answer input-group-addon">
+  <span class="delete_answer_variant input-group-addon">
     <i class="fa fa-close"></i>
   </span>
 </div>
 <% when "text" %>
   <div class="form-group">
     <label>Answer</label>
-    <%= f.text_area :title, class: 'form-control', rows: 3, placeholder: 'Write here a placeholder' %>
+    <%= f.text_area :title, class: 'form-control', rows: 3, autocomplete: 'off', placeholder: 'Write here a placeholder' %>
   </div>
 <% end %>

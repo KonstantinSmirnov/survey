@@ -10,11 +10,11 @@
             <% when "single" %>
               <fieldset class="form-group">
                 <legend><%= question.title %></legend>
-                <% question.answers.each do |answer| %>
+                <% question.answer_variants.each do |answer_variant| %>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="radio" class="form-check-input" name="question-<%= question.id %>" value="answer-<%= answer.id %>">
-                      <%= answer.title %>
+                      <input type="radio" class="form-check-input" name="question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>">
+                      <%= answer_variant.title %>
                     </label>
                   </div>
                 <% end %>
@@ -22,11 +22,11 @@
             <% when "multiply" %>
               <fieldset class="form-group">
                 <legend><%= question.title %></legend>
-                <% question.answers.each do |answer| %>
+                <% question.answer_variants.each do |answer_variant| %>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" name="question-<%= question.id %>[]" value="answer-<%= answer.id %>">
-                      <%= answer.title %>
+                      <input type="checkbox" class="form-check-input" name="question-<%= question.id %>[]" value="answer-variant-<%= answer_variant.id %>">
+                      <%= answer_variant.title %>
                     </label>
                   </div>
                 <% end %>

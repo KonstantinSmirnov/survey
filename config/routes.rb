@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :surveys do
       get 'surveys/activate', as: 'activate'
       resources :questions do
-        resources :answers
+        resources :answer_variants
       end
     end
   end

@@ -14,8 +14,8 @@
           </h3>
         </div>
         <fieldset class="form-group">
-          <% question.answers.each do |answer| %>
-            <%= render partial: 'app/answers/answer', locals: { answer: answer } %>
+          <% question.answer_variant.each do |answer_variant| %>
+            <%= render partial: 'app/answer_variants/answer_variant', locals: { answer_variant: answer_variant } %>
           <% end %>
         </fieldset>
       <% end %>

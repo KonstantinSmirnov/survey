@@ -1,0 +1,11 @@
+<%
+  @question = Question.find(params[:question_id])
+  new_answer_variant = @question.answer_variants.build(title: '')
+  form_for [:app, @question.survey, @question] do |f|
+    f.fields_for(:answer_variants, new_answer_variant, :child_index => Time.now.to_i) do |builder|
+      @answer_variant = builder
+    end
+  end
+%>
+
+$("#question-<%= @question.id %>-answer-variants").append("<%= escape_javascript(render partial: 'answer_variant_fields', locals: { f: @answer_variant }) %>");

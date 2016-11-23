@@ -7,16 +7,16 @@
       <%= f.text_field :title, autocomplete: 'off', class: 'form-control', placeholder: 'Write here your question' %>
     </div>
     <div class="form-group">
-      <%= f.label :answers unless question.question_type == "text" %>
-      <div id="question-<%= question.id %>-answers">
-        <%= f.fields_for :answers do |answer| %>
-          <div id="answer-<%= answer.object.id %>">
-            <%= render partial: 'app/answers/answer_fields', locals: { f: answer } %>
+      <%= f.label :answer_variants unless question.question_type == "text" %>
+      <div id="question-<%= question.id %>-answer-variants">
+        <%= f.fields_for :answer_variants do |answer_variant| %>
+          <div id="answer-variant-<%= answer_variant.object.id %>">
+            <%= render partial: 'app/answer_variants/answer_variant_fields', locals: { f: answer_variant } %>
           </div>
         <% end %>
       </div>
       <% unless question.question_type == "text" %>
-        <%= link_to "Add answer", new_app_survey_question_answer_path(question.survey, question, question.answers.new), remote: true %>
+        <%= link_to "Add answer variant", new_app_survey_question_answer_variant_path(question.survey, question, question.answer_variants.new), remote: true %>
       <% end %>
     </div>
     <div class="form-group">
