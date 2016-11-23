@@ -27,7 +27,7 @@
                 <% question.answers.each do |answer| %>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" name="question-<%= question.id %>" value="answer-<%= answer.id %>">
+                      <input type="checkbox" class="form-check-input" name="question-<%= question.id %>[]" value="answer-<%= answer.id %>">
                       <%= answer.title %>
                     </label>
                   </div>
