@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-lg-9">
+      <h1>
+        <%= @survey.title %>
+      </h1>
+      <%= @survey.description %>
+      <hr>
+      <% @survey.questions.each do |question| %>
+        <div class="form-group">
+          <h3>
+            <%= question.title %>
+          </h3>
+        </div>
+        <fieldset class="form-group">
+          <% question.answer_variants.each do |answer_variant| %>
+
+          <% case answer_variant.question.question_type %>
+            <% when "single" %>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="question-<%= answer_variant.question.id %>">
+                  <%= answer_variant.title.present? ? answer_variant.title : 'Fill in this answer variant' %>
+                  Answers: <%= answer_variant.responses.count %>
+                </label>
+              </div>
+            <% when "multiply" %>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value="">
+                  <%= answer_variant.title.present? ? answer_variant.title : 'Fill in this answer variant' %>
+                  Answers: <%= answer_variant.responses.count %>
+                </label>
+              </div>
+            <% when "text" %>
+              <div class="form-group">
+                <label for="exampleTextarea">Answer</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="<%= answer_variant.title %>"></textarea>
+              </div>
+            <% end %>
+
+          <% end %>
+        </fieldset>
+      <% end %>
+    </div>
+    <div class="col-md-4 col-lg-3">
+      <%= render partial: 'shared/survey_right_menu' %>
+    </div>
+  </div>
+</div>

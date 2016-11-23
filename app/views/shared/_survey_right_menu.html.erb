@@ -1,7 +1,10 @@
 <nav class="nav nav-pills nav-stacked">
   <%= link_to "Edit survey", edit_app_survey_path(@survey), class: "nav-link #{ 'active' if controller?('app/surveys') && action?('edit') }" %>
+  <%= link_to "Results", app_show_survey_results_path(@survey), class: "nav-link #{ 'active' if controller?('app/results') && action?('show') }" %>
+
+  <hr>
+  
   <a class="nav-link" href="#">Design</a>
   <a class="nav-link" href="#">Settings</a>
   <a class="nav-link" href="#">Answers</a>
-  <a class="nav-link" href="#">Results</a>
 </nav>
