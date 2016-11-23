@@ -12,6 +12,10 @@ $lightBodyColor: #FFFDE7;
   background-color: $lightBodyColor;
 }
 
+ol.breadcrumb {
+  background-color: $light;
+}
+
 nav.navbar {
   z-index: 100;
   .nav-item.active > a {
