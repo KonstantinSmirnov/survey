@@ -2,11 +2,9 @@
   <div class="row">
     <div class="col-xs-12">
 
-
-
       <% if @survey.active? %>
 
-        <form accept-charset="UTF-8" method='post' action='/first/save'>
+        <form accept-charset="UTF-8" method='post' action='/responses'>
           <% @survey.questions.each do |question| %>
             <% case question.question_type %>
             <% when "single" %>
