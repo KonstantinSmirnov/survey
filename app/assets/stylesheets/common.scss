@@ -6,6 +6,11 @@ $dark: #1D2328;
 $medium: #F05024;
 $lightGray: #EBEFF3;
 $light: #FFFFFF;
+$lightBodyColor: #FFFDE7;
+
+.body-color {
+  background-color: $lightBodyColor;
+}
 
 nav.navbar {
   z-index: 100;
