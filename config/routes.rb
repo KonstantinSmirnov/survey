@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   
   scope module: 'visitor' do
     resources :surveys, only: [:show]
-    resources :responses, only: [:create]
+    resources :responses, only: [:create, :index]
   end
 
   match "/404", :to => "errors#not_found", :via => :all

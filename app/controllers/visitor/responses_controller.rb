@@ -21,6 +21,12 @@ class Visitor::ResponsesController < VisitorController
         response = Response.create(question_id: question_id, answer_variant_id: answer_variant_id, text: text)
       end
     end
+    
+    redirect_to responses_path
+  end
+  
+  def index
+    
   end
 
 end
