@@ -5,7 +5,7 @@ class Question < ApplicationRecord
   belongs_to :survey
   has_many :answer_variants
   
-  has_many :responces
+  has_many :responses
 
   accepts_nested_attributes_for :answer_variants, :allow_destroy => true
 

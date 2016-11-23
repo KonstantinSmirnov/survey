@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20161123071016) do
     t.integer  "question_type", default: 0
   end
 
-  create_table "responces", force: :cascade do |t|
+  create_table "responses", force: :cascade do |t|
     t.integer  "question_id"
     t.integer  "answer_variant_id"
     t.text     "text"

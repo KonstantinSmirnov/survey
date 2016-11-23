@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
   
-  scope module: 'response' do
+  scope module: 'visitor' do
     resources :surveys, only: [:show]
     resources :responses, only: [:create]
   end
