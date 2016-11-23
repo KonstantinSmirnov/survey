@@ -2,7 +2,7 @@
 <% when "single" %>
   <div class="form-check">
     <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optionsRadios">
+      <input type="radio" class="form-check-input" name="question-<%= answer.question.id %>">
       <%= answer.title.present? ? answer.title : 'Fill in this answer' %>
     </label>
   </div>

@@ -2,53 +2,49 @@
   <div class="row">
     <div class="col-xs-12">
 
-      <p>
-        Here need to add a simple html form with action to rails controller!
-        <form accept-charset="UTF-8" method='post' action='/first/save'>
 
-        <label for='S.No'>S.No</label>
-            <input type="text" name="s_no" placeholder='Enter s. no.'>
-        <label for='name'>Name</label>
-            <input type="text" name='name' placeholder='Enter your name'> <br>
-        <label for='seller_id'>Seller ID</label>
-            <input type="text" name='seller_id' placeholder='Enter your seller ID'> <br>
-        <label for='email'>Email</label>
-            <input type="email" name='email' placeholder='Enter your email'> <br>
-        <label for='img_url'>Image</label>
-            <input type='text' name='img_url' placeholder='Enter your image url'> <br>
-            <input type="submit" name='save' value='Save'>
-            def save
-              @name = params[:name]
-              @email = params[:email]
-              @seller_id = params[:seller_id]
-              @img_url = params[:img_url]
-              @s_no = params[:s_no]
-            end
-            post 'first/save'
-        </form>
-      </p>
 
       <% if @survey.active? %>
 
-        <h1>
-          <%= @survey.title %>
-        </h1>
-        <hr>
-        <%= @survey.description %>
-        <hr>
-        <% @survey.questions.each do |question| %>
-          <div class="form-group">
-            <h3>
-              <%= question.title %>
-            </h3>
-          </div>
-          <fieldset class="form-group">
-            <% question.answers.each do |answer| %>
-              <%= render partial: 'app/answers/answer', locals: { answer: answer } %>
+        <form accept-charset="UTF-8" method='post' action='/first/save'>
+          <% @survey.questions.each do |question| %>
+            <% case question.question_type %>
+            <% when "single" %>
+              <fieldset class="form-group">
+                <legend><%= question.title %></legend>
+                <% question.answers.each do |answer| %>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="question-<%= question.id %>" value="answer-<%= answer.id %>">
+                      <%= answer.title %>
+                    </label>
+                  </div>
+                <% end %>
+              </fieldset>
+            <% when "multiply" %>
+              <fieldset class="form-group">
+                <legend><%= question.title %></legend>
+                <% question.answers.each do |answer| %>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" name="question-<%= question.id %>" value="answer-<%= answer.id %>">
+                      <%= answer.title %>
+                    </label>
+                  </div>
+                <% end %>
+              </fieldset>
+            <% when "text" %>
+              <div class="form-group">
+                <label for="question-<%= question.id %>"><%= question.title %></label>
+                <textarea class="form-control" id="question-<%= question.id %>" rows="3" name="question-<%= question.id %>"></textarea>
+              </div>
+            <% else %>
+              Another question!
             <% end %>
-          </fieldset>
-        <% end %>
-        <button type="button" name="button" class="btn btn-primary">Done!</button>
+          <% end %>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 
       <% else %>
         <div id="page_error">
