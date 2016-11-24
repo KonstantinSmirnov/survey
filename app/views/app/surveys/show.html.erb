@@ -1,16 +1,53 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-lg-9">
-      <form>
+      <div class="jumbotron">
+        <h1 class="display-5">How do you want to gather answers?</h1>
+        <p class="lead">Copy this link and send your respondents via email:</p>
+        <form>
+          <div class="input-group">
+            <input type="text" class="form-control" value='<%= "#{request.base_url }/surveys/#{@survey.encrypted_link}"  %>'>
+            <span class="input-group-btn">
+              <%= link_to survey_path(@survey.encrypted_link), target: "_blank", class: 'btn btn-secondary' do %>
+                <i class="fa fa-share-square-o" title="Share survey with people"></i>
+              <% end %>
+            </span>
+          </div>
+        </form>
+      </div>
 
-        <div class="form-group">
-          Share this link with your friends:<br>
-          <input type="text" name="firstname" value='<%= "#{request.base_url }/surveys/#{@survey.encrypted_link}"  %>' class="form-control"><br>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Email invitation</h4>
+            <p class="card-text">Пригласить респондентов вашего опроса и отслеживать их идентичность. Узнайте, как они ответили.</p>
+            <div class="text-xs-center">
+              <a href="#" class="btn btn-primary">Send</a>
+            </div>
+          </div>
         </div>
-      </form>
-      <%= link_to survey_path(@survey.encrypted_link), target: "_blank" do %>
-        <i class="fa fa-share-square-o" title="Share survey with people"></i>
-      <% end %>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Website tools</h4>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Web link</li>
+              <li class="list-group-item">Widget on webpage</li>
+              <li class="list-group-item">Popup window</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-4 col-lg-3">
       <%= render partial: 'shared/survey_right_menu' %>
