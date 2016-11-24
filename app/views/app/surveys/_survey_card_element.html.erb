@@ -8,11 +8,8 @@
     <p class="card-title">Respondents: 0</p>
     
     <div class="links text-xs-center">
-      <%= link_to survey_path(survey.encrypted_link), target: "_blank" do %>
+      <%= link_to app_survey_path(survey) do %>
         <i class="fa fa-share-square-o" title="Share survey with people"></i>
-      <% end %>
-      <%= link_to app_survey_path(survey), class: '' do %>
-        <i class="fa fa-eye" title="Show survey"></i>
       <% end %>
       <%= link_to app_show_survey_results_path(survey) do %>
         <i class="fa fa-tachometer" title="See and analyze results"></i>

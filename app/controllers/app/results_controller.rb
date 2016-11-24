@@ -1,5 +1,5 @@
 class App::ResultsController < AppController
-  add_breadcrumb "Surveys", :root_path
+  add_breadcrumb "Home", :root_path
   
   def show
     @survey = Survey.find(params[:id])
