@@ -157,5 +157,13 @@ footer {
     position: absolute;
     top: -5px;
     right: -5px;
+    visibility: hidden;
+  }
+  
+  &:hover {
+    .card-delete {
+      color: $medium;
+      visibility: visible;
+    }
   }
 }

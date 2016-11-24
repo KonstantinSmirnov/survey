@@ -1,18 +1,28 @@
 <div class="card survey-card">
+  <h3 class="card-header">
+    <%= link_to "#{truncate(survey.title, length: 50)}", edit_app_survey_path(survey), class: ''%>
+  </h3>
   <div class="card-block">
-    <h4 class="card-title">
-      <%= link_to "#{truncate(survey.title, length: 50)}", edit_app_survey_path(survey), class: ''%>
-    </h4>
-    <p>
-      <%= link_to "Respondent view", survey_path(survey.encrypted_link), target: "_blank" %>
-    </p>
     <p class="card-text"><%= truncate(survey.description, length: 100) %></p>
-    <%= link_to "Preview", app_survey_path(survey), class: '' %>
-    <%= link_to app_survey_activate_path(survey), remote: true do %>
-      <%= survey.active? ? 'active' : 'inactive' %>
+    
+    <%= link_to survey_path(survey.encrypted_link), target: "_blank" do %>
+      <i class="fa fa-share-square-o"></i>
     <% end %>
+
+    <%= link_to app_survey_path(survey), class: '' do %>
+      <i class="fa fa-eye"></i>
+    <% end %>
+    <%= link_to app_show_survey_results_path(survey) do %>
+      <i class="fa fa-signal"></i>
+    <% end %>
+
     <%= link_to app_survey_path(survey), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
       <i class="fa fa-trash card-delete"></i>
+    <% end %>
+  </div>
+  <div class="card-footer text-xs-center">
+    <%= link_to app_survey_activate_path(survey), remote: true do %>
+      <%= survey.active? ? 'Active' : 'Inactive' %>
     <% end %>
   </div>
 </div>
