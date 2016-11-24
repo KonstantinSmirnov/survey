@@ -1,24 +1,26 @@
 <div class="card survey-card">
-  <h3 class="card-header">
+  <h5 class="card-header">
     <%= link_to "#{truncate(survey.title, length: 50)}", edit_app_survey_path(survey), class: ''%>
-  </h3>
+  </h5>
   <div class="card-block">
     <p class="card-text"><%= truncate(survey.description, length: 100) %></p>
     
-    <%= link_to survey_path(survey.encrypted_link), target: "_blank" do %>
-      <i class="fa fa-share-square-o"></i>
-    <% end %>
+    <div class="text-xs-center">
+      <%= link_to survey_path(survey.encrypted_link), target: "_blank" do %>
+        <i class="fa fa-share-square-o"></i>
+      <% end %>
 
-    <%= link_to app_survey_path(survey), class: '' do %>
-      <i class="fa fa-eye"></i>
-    <% end %>
-    <%= link_to app_show_survey_results_path(survey) do %>
-      <i class="fa fa-signal"></i>
-    <% end %>
+      <%= link_to app_survey_path(survey), class: '' do %>
+        <i class="fa fa-eye"></i>
+      <% end %>
+      <%= link_to app_show_survey_results_path(survey) do %>
+        <i class="fa fa-signal"></i>
+      <% end %>
 
-    <%= link_to app_survey_path(survey), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
-      <i class="fa fa-trash card-delete"></i>
-    <% end %>
+      <%= link_to app_survey_path(survey), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+        <i class="fa fa-trash card-delete"></i>
+      <% end %>
+    </div>
   </div>
   <div class="card-footer text-xs-center">
     <%= link_to app_survey_activate_path(survey), remote: true do %>
