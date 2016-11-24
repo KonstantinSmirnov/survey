@@ -144,11 +144,17 @@ footer {
     position: absolute;
     top: -5px;
     right: -5px;
+    &:hover {
+      color: $medium;
+    }
   }
   .question-form-edit {
     position: absolute;
     top: -5px;
     right: 15px;
+    &:hover {
+      color: $medium;
+    }
   }
 }
 .card {
