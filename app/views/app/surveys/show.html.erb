@@ -1,8 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-lg-9">
-      Share using this link:
-      
+      <form>
+
+        <div class="form-group">
+          Share this link with your friends:<br>
+          <input type="text" name="firstname" value='<%= "#{request.base_url }/surveys/#{@survey.encrypted_link}"  %>' class="form-control"><br>
+        </div>
+      </form>
       <%= link_to survey_path(@survey.encrypted_link), target: "_blank" do %>
         <i class="fa fa-share-square-o" title="Share survey with people"></i>
       <% end %>
