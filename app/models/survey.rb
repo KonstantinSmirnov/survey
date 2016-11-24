@@ -14,6 +14,6 @@ class Survey < ApplicationRecord
   private
 
   def generate_encrypted_link
-    self.encrypted_link = SecureRandom.uuid
+    self.encrypted_link = SecureRandom.hex(5)
   end
 end
