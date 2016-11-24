@@ -5,6 +5,8 @@
   <div class="card-block">
     <p class="card-text"><%= truncate(survey.description, length: 50) %></p>
     
+    <p class="card-title">Respondents: 0</p>
+    
     <div class="links text-xs-center">
       <%= link_to survey_path(survey.encrypted_link), target: "_blank" do %>
         <i class="fa fa-share-square-o" title="Share survey with people"></i>
