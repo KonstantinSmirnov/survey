@@ -1,5 +1,4 @@
 class App::SurveysController < AppController
-  add_breadcrumb "Home", :root_path
 
   def index
     @surveys = current_user.surveys
@@ -22,7 +21,6 @@ class App::SurveysController < AppController
 
   def edit
     @survey = Survey.find(params[:id])
-    add_breadcrumb "Edit: #{@survey.title}"
   end
 
   def update
@@ -38,7 +36,6 @@ class App::SurveysController < AppController
 
   def show
     @survey = Survey.find(params[:id])
-    add_breadcrumb "Share: #{@survey.title}"
   end
 
   def destroy

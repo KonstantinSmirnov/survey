@@ -14,7 +14,6 @@
   <body>
     <%= render partial: 'shared/header' %>
     <main>
-      <%= render partial: 'shared/breadcrumbs' if !controller?('landing') %>
       <%= yield %>
     </main>
     <%= render partial: 'shared/footer' %>
