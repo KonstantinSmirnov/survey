@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+
+  header:
+    logo: "Surveys"
+    my_surveys: "My Surveys"
+    sign_in: "Sign In"
+    sign_out: "Sign Out"

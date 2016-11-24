@@ -1,2 +1,8 @@
 es:
-  hello: "Hello world"
+  hello: "Hola"
+
+  header:
+    logo: "Encuestas"
+    my_surveys: "Mis Encuestas"
+    sign_in: "Sign In"
+    sign_out: "Salir"

@@ -2,26 +2,28 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <%= link_to "Survey application", root_path, class: 'navbar-brand text-uppercase' %>
+        <%= link_to t('header.logo'), root_path, class: 'navbar-brand text-uppercase' %>
         <ul class="nav navbar-nav float-xs-right">
           <li class="nav-item <%= 'active' if controller?('app/surveys') %>">
-            <%= link_to "My Surveys", root_path, class: "btn btn-default" if user_signed_in? %>
+            <%= link_to t('header.my_surveys'), root_path, class: "btn btn-default" if user_signed_in? %>
           </li>
-          <li id="language_selector" class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.locale %>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
-              <% User.locales.except(current_user.locale).each do |locale, value| %>
-                <%= link_to "#{locale}", app_update_locale_path(locale), method: :post, class: 'dropdown-item' %>
-              <% end %>
-            </div>
-          </li>
+          <% if user_signed_in? %>
+            <li id="language_selector" class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= current_user.locale %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
+                <% User.locales.except(current_user.locale).each do |locale, value| %>
+                  <%= link_to "#{locale}", app_update_locale_path(locale), method: :post, class: 'dropdown-item' %>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
           <li class="nav-item">
             <% if user_signed_in? %>
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+              <%= link_to t('header.sign_out'), destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
             <% else %>
-              <%= link_to "Sign in", new_user_session_path, class: 'btn btn-outline-primary' %>
+              <%= link_to t('header.sign_in'), new_user_session_path, class: 'btn btn-outline-primary' %>
             <% end %>
           </li>
         </ul>

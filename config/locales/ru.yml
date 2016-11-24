@@ -1,2 +1,8 @@
 ru:
-  hello: "Hello world"
+  hello: "Привет"
+
+  header:
+    logo: "Опросы"
+    my_surveys: "Мои опросы"
+    sign_in: "Войти"
+    sign_out: "Выйти"
