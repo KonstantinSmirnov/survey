@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   namespace :app do
+    post 'locales/:locale', to: 'locales#update', as: 'update_locale'
     get 'surveys/get_list_view', as: 'get_list_view'
     get 'surveys/get_card_view', as: 'get_card_view'
     get 'surveys/:id/edit_header', to: 'surveys#edit_header', as: 'edit_survey_header'
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  
+
   scope module: 'visitor' do
     resources :surveys, only: [:show]
     resources :responses, only: [:create, :index]
