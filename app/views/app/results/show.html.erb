@@ -13,7 +13,7 @@
             <%= question.title %>
           </h3>
         </div>
-        <%= pie_chart question.responses.group(:answer_variant_id).count %>
+        <%= pie_chart question.responses.joins(:answer_variant).group(:title).count %>
         <fieldset class="form-group">
           <% question.answer_variants.each do |answer_variant| %>
 
