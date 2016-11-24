@@ -2,10 +2,14 @@ class Visitor::ResponsesController < VisitorController
   protect_from_forgery with: :null_session
   
   def create
+    first_question_id = params.except(:action, :controller).first[0].split('-').last
+    first_question = Question.find(first_question_id)
+    
+    respondent = Respondent.create(survey: first_question.survey)
+          
     params.except(:action, :controller).each do |key, value|
       question_id = key.split('-').last
       question = Question.find(question_id)
-      respondent = Respondent.create(survey: question.survey)
       case question.question_type
       when "single"
         answer_variant_id = value.split('-').last
