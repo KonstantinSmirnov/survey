@@ -155,13 +155,12 @@ footer {
   position: relative;
   .card-delete {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -10px;
+    right: -10px;
     visibility: hidden;
   }
   &:hover {
     .card-delete {
-      color: $medium;
       visibility: visible;
     }
   }
@@ -170,5 +169,14 @@ footer {
   }
   .card-text {
     min-height: 4em;
+  }
+  .links {
+    font-size: 1.7em;
+    a {
+      text-decoration: none;
+      &:hover {
+        color: $medium;
+      }
+    }
   }
 }

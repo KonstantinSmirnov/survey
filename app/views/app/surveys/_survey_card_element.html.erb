@@ -5,16 +5,15 @@
   <div class="card-block">
     <p class="card-text"><%= truncate(survey.description, length: 50) %></p>
     
-    <div class="text-xs-center">
+    <div class="links text-xs-center">
       <%= link_to survey_path(survey.encrypted_link), target: "_blank" do %>
-        <i class="fa fa-share-square-o"></i>
+        <i class="fa fa-share-square-o" title="Share survey with people"></i>
       <% end %>
-
       <%= link_to app_survey_path(survey), class: '' do %>
-        <i class="fa fa-eye"></i>
+        <i class="fa fa-eye" title="Show survey"></i>
       <% end %>
       <%= link_to app_show_survey_results_path(survey) do %>
-        <i class="fa fa-signal"></i>
+        <i class="fa fa-tachometer" title="See and analyze results"></i>
       <% end %>
 
       <%= link_to app_survey_path(survey), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
