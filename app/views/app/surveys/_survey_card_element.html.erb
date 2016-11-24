@@ -1,9 +1,9 @@
 <div class="card survey-card">
   <h5 class="card-header">
-    <%= link_to "#{truncate(survey.title, length: 50)}", edit_app_survey_path(survey), class: ''%>
+    <%= link_to "#{truncate(survey.title, length: 38)}", edit_app_survey_path(survey), class: ''%>
   </h5>
   <div class="card-block">
-    <p class="card-text"><%= truncate(survey.description, length: 100) %></p>
+    <p class="card-text"><%= truncate(survey.description, length: 50) %></p>
     
     <div class="text-xs-center">
       <%= link_to survey_path(survey.encrypted_link), target: "_blank" do %>

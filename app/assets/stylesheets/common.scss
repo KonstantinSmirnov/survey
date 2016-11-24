@@ -159,11 +159,16 @@ footer {
     right: -5px;
     visibility: hidden;
   }
-  
   &:hover {
     .card-delete {
       color: $medium;
       visibility: visible;
     }
+  }
+  .card-header {
+    min-height: 3.5em;
+  }
+  .card-text {
+    min-height: 4em;
   }
 }
