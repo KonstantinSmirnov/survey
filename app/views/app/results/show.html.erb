@@ -23,7 +23,7 @@
                 <label class="form-check-label">
                   <input type="radio" class="form-check-input" name="question-<%= answer_variant.question.id %>">
                   <%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %>
-                  Answers: <%= answer_variant.responses.count %>
+                  - <%= answer_variant.responses.count %>
                 </label>
               </div>
             <% when "multiply" %>
@@ -31,7 +31,7 @@
                 <label class="form-check-label">
                   <input class="form-check-input" type="checkbox" value="">
                   <%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %>
-                  Answers: <%= answer_variant.responses.count %>
+                  - <%= answer_variant.responses.count %>
                 </label>
               </div>
             <% when "text" %>
