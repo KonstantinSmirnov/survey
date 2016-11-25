@@ -10,11 +10,11 @@
           <% if user_signed_in? %>
             <li id="language_selector" class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.locale %>
+                <%= current_user.locale.upcase %>
               </a>
               <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
                 <% User.locales.except(current_user.locale).each do |locale, value| %>
-                  <%= link_to "#{locale}", app_update_locale_path(locale), method: :post, class: 'dropdown-item' %>
+                  <%= link_to "#{locale.upcase}", app_update_locale_path(locale), method: :post, class: 'dropdown-item' %>
                 <% end %>
               </div>
             </li>
