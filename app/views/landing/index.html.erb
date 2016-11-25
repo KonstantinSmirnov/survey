@@ -5,31 +5,24 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-6 landing-main-text hidden-xs-down">
-              <h1>Welcome</h1>
-              <p>
-                Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur.
-              </p>
-              <p>
-                Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur.
-                Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur.
-              </p>
-              <p>
-                Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur.
-              </p>
+              <h1><%= t('landing.welcome') %></h1>
+              <p><%= t('landing.paragraph1') %></p>
+              <p><%= t('landing.paragraph2') %></p>
+              <p><%= t('landing.paragraph3') %></p>
             </div>
             <div id="registration" class="offset-sm-1 col-sm-5 landing-main-text">
-              <h1>Registration</h1>
+              <h1><%= t('landing.registration') %></h1>
 
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <%= devise_error_messages! %>
 
                 <div class="form-group">
-                  <%= f.label :email %><br />
+                  <%= f.label :email, t('landing.email') %><br />
                   <%= f.email_field :email, autofocus: true, class: 'form-control' %>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :password %>
+                  <%= f.label :password, t('landing.password') %>
                   <% if @minimum_password_length %>
                   <em>(<%= @minimum_password_length %> characters minimum)</em>
                   <% end %><br />
@@ -37,12 +30,12 @@
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :password_confirmation %><br />
+                  <%= f.label :password_confirmation, t('landing.password_confirmation') %><br />
                   <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
                 </div>
 
                 <div class="form-group">
-                  <%= f.submit "Sign up", class: 'btn btn-primary btn-lg' %>
+                  <%= f.submit t('landing.sign_up'), class: 'btn btn-primary btn-lg' %>
                 </div>
               <% end %>
 
@@ -59,19 +52,19 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-xs-center">
-            <h1 class="">How we can help you</h1>
+            <h1 class=""><%= t('landing.how_we_can_help_header') %></h1>
             <hr>
             <div class="col-sm-4">
               <i class="fa fa-edit"></i>
-              <h5>Curabitur blandit tempus porttitor.</h5>
+              <h5><%= t('landing.how_we_can_help_point1') %></h5>
             </div>
             <div class="col-sm-4">
               <i class="fa fa-envelope-o"></i>
-              <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+              <h5><%= t('landing.how_we_can_help_point2') %></h5>
             </div>
             <div class="col-sm-4">
               <i class="fa fa-send"></i>
-              <h5>Aenean lacinia bibendum nulla sed consectetur.</h5>
+              <h5><%= t('landing.how_we_can_help_point3') %></h5>
             </div>
           </div>
         </div>
@@ -82,21 +75,17 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-xs-center">
-            <h1>What our clients say</h1>
+            <h1><%= t('landing.testimonials_header') %></h1>
             <br>
             <div class="col-sm-6">
-              <h3>Donec id elit non mi porta gravida at eget metus.</h3>
+              <h3><%= t('landing.testimonials_point1_header') %></h3>
               <hr>
-              <p>
-                Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor.
-              </p>
+              <p><%= t('landing.testimonials_point1_content') %></p>
             </div>
             <div class="col-sm-6">
-              <h3>Maecenas faucibus mollis interdum.</h3>
+              <h3><%= t('landing.testimonials_point2_header') %></h3>
               <hr>
-              <p>
-                Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus.
-              </p>
+              <p><%= t('landing.testimonials_point2_content') %></p>
             </div>
           </div>
         </div>
