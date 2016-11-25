@@ -1,6 +1,6 @@
-<div class="container">
+<div class="user-survey">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="offset-md-3 col-md-6">
 
       <% if @survey.active? %>
         <h1>
@@ -10,42 +10,45 @@
         <hr>
         <form accept-charset="UTF-8" method='post' action='/responses'>
           <% @survey.questions.each do |question| %>
-            <% case question.question_type %>
-            <% when "single" %>
-              <fieldset class="form-group">
-                <legend><%= question.title %></legend>
-                <% question.answer_variants.each do |answer_variant| %>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input type="radio" class="form-check-input" name="question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>">
-                      <%= answer_variant.title %>
-                    </label>
-                  </div>
-                <% end %>
-              </fieldset>
-            <% when "multiply" %>
-              <fieldset class="form-group">
-                <legend><%= question.title %></legend>
-                <% question.answer_variants.each do |answer_variant| %>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input type="checkbox" class="form-check-input" name="question-<%= question.id %>[]" value="answer-variant-<%= answer_variant.id %>">
-                      <%= answer_variant.title %>
-                    </label>
-                  </div>
-                <% end %>
-              </fieldset>
-            <% when "text" %>
-              <div class="form-group">
-                <label for="question-<%= question.id %>"><%= question.title %></label>
-                <textarea class="form-control" id="question-<%= question.id %>" rows="3" name="question-<%= question.id %>"></textarea>
-              </div>
-            <% else %>
-              Another question!
-            <% end %>
+            <div class="user-question">
+              <% case question.question_type %>
+              <% when "single" %>
+                <fieldset class="form-group">
+                  <legend><%= question.title %></legend>
+                  <% question.answer_variants.each do |answer_variant| %>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>">
+                        <%= answer_variant.title %>
+                      </label>
+                    </div>
+                  <% end %>
+                </fieldset>
+              <% when "multiply" %>
+                <fieldset class="form-group">
+                  <legend><%= question.title %></legend>
+                  <% question.answer_variants.each do |answer_variant| %>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="question-<%= question.id %>[]" value="answer-variant-<%= answer_variant.id %>">
+                        <%= answer_variant.title %>
+                      </label>
+                    </div>
+                  <% end %>
+                </fieldset>
+              <% when "text" %>
+                <div class="form-group">
+                  <label for="question-<%= question.id %>"><%= question.title %></label>
+                  <textarea class="form-control" id="question-<%= question.id %>" rows="3" name="question-<%= question.id %>"></textarea>
+                </div>
+              <% else %>
+                Another question!
+              <% end %>
+            </div>
           <% end %>
-
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="text-xs-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </form>
 
       <% else %>

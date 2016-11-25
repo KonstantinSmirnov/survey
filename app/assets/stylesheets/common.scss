@@ -226,3 +226,15 @@ footer {
     }
   }
 }
+
+.user-survey {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #FEF7E1;
+  .user-question {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: $light;
+  }
+}
