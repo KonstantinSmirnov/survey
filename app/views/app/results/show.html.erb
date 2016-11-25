@@ -7,42 +7,45 @@
       <%= @survey.description %>
       <hr>
       <p><%= @survey.respondents.count %> <%= t('survey.results.respondents') %></p>
-      <% @survey.questions.each do |question| %>
-        <div class="form-group">
-          <h3>
-            <%= question.title %>
-          </h3>
-        </div>
-        <%= pie_chart question.responses.joins(:answer_variant).group(:title).count %>
-        <fieldset class="form-group">
-          <% question.answer_variants.each do |answer_variant| %>
 
-          <% case answer_variant.question.question_type %>
-            <% when "single" %>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="radio" class="form-check-input" name="question-<%= answer_variant.question.id %>">
-                  <%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %>
-                  - <%= answer_variant.responses.count %>
-                </label>
-              </div>
-            <% when "multiply" %>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" value="">
-                  <%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %>
-                  - <%= answer_variant.responses.count %>
-                </label>
-              </div>
-            <% when "text" %>
-              <div class="form-group">
-                <label for="exampleTextarea">Answer</label>
-                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="<%= answer_variant.title %>"></textarea>
-              </div>
+      <% if @survey.respondents.count > 0 %>
+        <% @survey.questions.each do |question| %>
+          <div class="form-group">
+            <h3>
+              <%= question.title %>
+            </h3>
+          </div>
+          <%= pie_chart question.responses.joins(:answer_variant).group(:title).count %>
+          <fieldset class="form-group">
+            <% question.answer_variants.each do |answer_variant| %>
+
+            <% case answer_variant.question.question_type %>
+              <% when "single" %>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="question-<%= answer_variant.question.id %>">
+                    <%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %>
+                    - <%= answer_variant.responses.count %>
+                  </label>
+                </div>
+              <% when "multiply" %>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    <%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %>
+                    - <%= answer_variant.responses.count %>
+                  </label>
+                </div>
+              <% when "text" %>
+                <div class="form-group">
+                  <label for="exampleTextarea">Answer</label>
+                  <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="<%= answer_variant.title %>"></textarea>
+                </div>
+              <% end %>
+
             <% end %>
-
-          <% end %>
-        </fieldset>
+          </fieldset>
+        <% end %>
       <% end %>
     </div>
     <div class="col-md-4 col-lg-3">
