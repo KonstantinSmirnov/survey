@@ -28,6 +28,18 @@ en:
     sign_in: "Sign In"
     sign_out: "Sign Out"
 
+  footer:
+    about_title: "ABOUT"
+    about_text: "We’ve been working on Go Analytics for the better part of a decade and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at themes@getbootstrap.com."
+    product_title: "PRODUCT"
+    product_features: "Features"
+    product_examples: "Examples"
+    product_tour: "Tour"
+    legal_title: "LEGAL"
+    legal_terms: "Terms"
+    legal_privacy: "Privacy"
+    legal_agreement: "Agreement"
+
   landing:
     welcome: "Welcome"
     paragraph1: "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
