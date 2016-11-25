@@ -12,9 +12,9 @@
 </td>
 <td>
   <%= link_to app_survey_activate_path(survey), remote: true do %>
-    <%= survey.active? ? 'active' : 'inactive' %>
+    <%= survey.active? ? t('common.active') : t('common.inactive') %>
   <% end %>
 </td>
 <td>
-  <%= link_to 'Delete', app_survey_path(survey), method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to t('common.delete'), app_survey_path(survey), method: :delete, data: { confirm: t('common.confirm') } %>
 </td>

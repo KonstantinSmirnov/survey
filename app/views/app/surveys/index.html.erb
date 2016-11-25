@@ -3,31 +3,29 @@
     <div class="col-xs-12 text-xs-center main-title">
       <h1>
         <span class="text-xs-center">
-          <%= link_to 'Create new survey', new_app_survey_path, class: 'btn btn-outline-primary' %>
+          <%= link_to t('survey.create_new_survey'), new_app_survey_path, class: 'btn btn-outline-primary' %>
         </span>
       </h1>
       <span>
-        <%= link_to "List view", app_get_list_view_path, class: "#{'active' if current_user.surveys_list_view?}" %>
+        <%= link_to t('common.list_view'), app_get_list_view_path, class: "#{'active' if current_user.surveys_list_view?}" %>
         |
-        <%= link_to "Card view", app_get_card_view_path, class: "#{'active' if current_user.surveys_card_view?}" %>
+        <%= link_to t('common.card_view'), app_get_card_view_path, class: "#{'active' if current_user.surveys_card_view?}" %>
       </span>
     </div>
     <div class="col-xs-12">
       <% unless current_user.surveys.any? %>
-        <h5 class="text-xs-center">
-          There are no surveys yet, but you can create one!
-        </h5>
+        <h5 class="text-xs-center"><%= t('survey.no_surveys') %></h5>
       <% else %>
         <% if current_user.surveys_list_view? %>
         <!-- TABLE VIEW -->
         <table class="table table-hover">
           <thead class="thead-default">
             <tr>
-              <th>Title</th>
-              <th>Respondents</th>
-              <th>Share</th>
-              <th>Results</th>
-              <th>Status</th>
+              <th><%= t('common.title') %></th>
+              <th><%= t('survey.respondents') %></th>
+              <th><%= t('common.share') %></th>
+              <th><%= t('common.results') %></th>
+              <th><%= t('common.status') %></th>
               <th></th>
             </tr>
           </thead>

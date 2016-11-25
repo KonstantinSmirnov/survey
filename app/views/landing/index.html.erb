@@ -17,12 +17,12 @@
                 <%= devise_error_messages! %>
 
                 <div class="form-group">
-                  <%= f.label :email, t('landing.email') %><br />
+                  <%= f.label :email, t('common.email') %><br />
                   <%= f.email_field :email, autofocus: true, class: 'form-control' %>
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :password, t('landing.password') %>
+                  <%= f.label :password, t('common.password') %>
                   <% if @minimum_password_length %>
                   <em>(<%= @minimum_password_length %> characters minimum)</em>
                   <% end %><br />
@@ -30,12 +30,12 @@
                 </div>
 
                 <div class="form-group">
-                  <%= f.label :password_confirmation, t('landing.password_confirmation') %><br />
+                  <%= f.label :password_confirmation, t('common.password_confirmation') %><br />
                   <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
                 </div>
 
                 <div class="form-group">
-                  <%= f.submit t('landing.sign_up'), class: 'btn btn-primary btn-lg' %>
+                  <%= f.submit t('common.sign_up'), class: 'btn btn-primary btn-lg' %>
                 </div>
               <% end %>
 

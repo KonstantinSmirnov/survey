@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-8 col-lg-9">
       <div class="jumbotron">
-        <h1 class="display-5">How do you want to gather answers?</h1>
-        <p class="lead">Copy this link and send your respondents via email:</p>
+        <h1 class="display-5"><%= t('survey.share.title') %></h1>
+        <p class="lead"><%= t('survey.share.paragraph') %></p>
         <form>
           <div class="input-group">
             <input type="text" class="form-control" value='<%= "#{request.base_url }/surveys/#{@survey.encrypted_link}"  %>'>

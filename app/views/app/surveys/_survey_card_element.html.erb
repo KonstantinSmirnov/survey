@@ -4,9 +4,9 @@
   </h5>
   <div class="card-block">
     <p class="card-text"><%= truncate(survey.description, length: 50) %></p>
-    
-    <p class="card-title">Respondents: <%= survey.respondents.count %></p>
-    
+
+    <p class="card-title"><%= t('survey.respondents') %>: <%= survey.respondents.count %></p>
+
     <div class="links text-xs-center">
       <%= link_to app_survey_path(survey) do %>
         <i class="fa fa-share-square-o" title="Share survey with people"></i>
@@ -15,14 +15,14 @@
         <i class="fa fa-tachometer" title="See and analyze results"></i>
       <% end %>
 
-      <%= link_to app_survey_path(survey), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+      <%= link_to app_survey_path(survey), method: :delete, data: { confirm: t('common.confirm') }, remote: true do %>
         <i class="fa fa-trash card-delete"></i>
       <% end %>
     </div>
   </div>
   <div class="card-footer text-xs-center">
     <%= link_to app_survey_activate_path(survey), remote: true do %>
-      <%= survey.active? ? 'Active' : 'Inactive' %>
+      <%= survey.active? ? t('common.active') : t('common.inactive') %>
     <% end %>
   </div>
 </div>
