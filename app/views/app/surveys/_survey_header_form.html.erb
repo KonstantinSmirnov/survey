@@ -9,6 +9,6 @@
   </div>
   <div class="form-group">
     <%= f.submit t('common.submit'), class: 'btn btn-primary' %>
-    <%= link_to "Cancel", (survey.persisted? ? edit_app_survey_path(survey) : app_surveys_path), class: 'btn btn-outline-secondary' %>
+    <%= link_to t('common.cancel'), (survey.persisted? ? edit_app_survey_path(survey) : app_surveys_path), class: 'btn btn-outline-secondary' %>
   </div>
 <% end %>
