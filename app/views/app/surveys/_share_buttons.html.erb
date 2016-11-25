@@ -15,13 +15,5 @@
   ><span class="share-button twitter">
     <i class="fa fa-twitter"></i>
   </span></a>
-
-  <span class="share-button linkedin" onclick='share_linkedin(
-    "<%= "&url=#{survey_url(object.encrypted_link)}" %>",
-    "<%= "&title=#{URI.encode(object.title)}" %>",
-    "<%= "&summary=#{URI.encode(object.description)}" %>",
-    "<%= "&source=#{URI(request.base_url)}" %>"
-  )'>
-    <i class="fa fa-linkedin"></i>
-  </span></a>
+  
 </div>
