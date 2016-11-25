@@ -1,0 +1,11 @@
+<nav class="nav nav-pills nav-stacked">
+  <%= link_to t('survey.edit_survey'), edit_app_survey_path(@survey), class: "nav-link #{ 'active' if controller?('app/surveys') && action?('edit') }" %>
+  <%= link_to t('common.share'), app_survey_path(@survey), class: "nav-link #{ 'active' if controller?('app/surveys') && action?('show') }" %>
+  <%= link_to t('common.results'), app_show_survey_results_path(@survey), class: "nav-link #{ 'active' if controller?('app/results') && action?('show') }" %>
+
+  <hr>
+
+  <a class="nav-link" href="#">Design</a>
+  <a class="nav-link" href="#">Settings</a>
+  <a class="nav-link" href="#">Answers</a>
+</nav>

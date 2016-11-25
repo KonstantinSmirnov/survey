@@ -1,0 +1,78 @@
+ru:
+  hello: "Привет!"
+
+  common:
+    title: "Название"
+    description: "Описание"
+    submit: "Сохранить"
+    cancel: "Отменить"
+    email: "Почта"
+    sign_up: "Зарегистрироваться"
+    sign_in: "Войти"
+    sign_out: "Выйти"
+    password: "Пароль"
+    password_confirmation: "Подтверждение пароля"
+    delete: "Удалить"
+    confirm: "Вы уверенны?"
+    active: "Активный"
+    inactive: "Неактивный"
+    list_view: "Список"
+    card_view: "Карточки"
+    results: "Результаты"
+    share: "Поделиться"
+    status: "Статус"
+
+  survey:
+    answer_variants: "Варианты ответа"
+    add_answer_variant: "Добавить вариант"
+    single_question: "Одиночный выбор"
+    multiply_question: "Множественный выбор"
+    text_question: "Текстовый"
+    edit_survey: "Редактировать опрос"
+    select_question_type: "Выберите тип вопроса"
+    respondents: "Респонденты"
+    add_question: "Добавить вопрос"
+    no_surveys: "Здесь пока нет опросов, создайте один!"
+    create_new_survey: "Новый опрос"
+    write_here_question_text: "Напишите здесь текст вопроса"
+    write_here_answer_variant_text: "Напишите здесь вариант ответа"
+    write_here_placeholder_text: "Напишите здесь текст подсказки"
+
+    share:
+      title: "Как вы хотите собрать ответы?"
+      paragraph: "Скопируйте эту ссылку и отправьте вашим респондентам в письме:"
+
+    results:
+      respondents: "респондентов приняло участие в вашем опросе!"
+
+  header:
+    logo: "Опросы"
+    my_surveys: "Мои опросы"
+
+  footer:
+    about_title: "О нас"
+    about_text: "We’ve been working on Go Analytics for the better part of a decade and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at themes@getbootstrap.com."
+    product_title: "Продукт"
+    product_features: "Функции"
+    product_examples: "Примеры"
+    product_tour: "Обзор"
+    legal_title: "LEGAL"
+    legal_terms: "Terms"
+    legal_privacy: "Privacy"
+    legal_agreement: "Agreement"
+
+  landing:
+    welcome: "Добро пожаловать!"
+    paragraph1: "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
+    paragraph2: "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
+    paragraph3: "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
+    registration: "Registration"
+    how_we_can_help_header: "How we can help you"
+    how_we_can_help_point1: "Curabitur blandit tempus porttitor."
+    how_we_can_help_point2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    how_we_can_help_point3: "Aenean lacinia bibendum nulla sed consectetur."
+    testimonials_header: "What our clients say"
+    testimonials_point1_header: "Donec id elit non mi porta gravida at eget metus."
+    testimonials_point1_content: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor."
+    testimonials_point2_header: "Maecenas faucibus mollis interdum."
+    testimonials_point2_content: "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus."

@@ -1,0 +1,16 @@
+<%= form_for [:app, survey] do |f| %>
+  <div class="form-group">
+    <%= f.label :title, t('common.title') %>
+    <%= f.text_field :title, autocomplete: 'off', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, t('common.description') %>
+    <%= f.text_area :description, autocomplete: 'off', class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit t('common.submit'), class: 'btn btn-primary' %>
+    <% if survey.persisted? %>
+      <%= link_to "Cancel", edit_app_survey_path(survey), class: 'btn btn-outline-secondary' %>
+    <% end %>
+  </div>
+<% end %>

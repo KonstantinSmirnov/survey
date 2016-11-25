@@ -1,0 +1,39 @@
+<div id="survey-header" class="question-form">
+  <% unless @survey.persisted? %>
+    <%= render partial: 'survey_header_form', locals: { survey: @survey } %>
+  <% else %>
+    <%= render partial: 'survey_header', locals: { survey: @survey } %>
+  <% end %>
+</div>
+
+<% if @survey.persisted? %>
+  <div id="questions">
+    <%= render partial: 'app/questions/questions' %>
+  </div>
+  <div id="add-question">
+    <button type="button" class="btn btn-outline-primary col-xs-12" data-toggle="modal" data-target="#new-question-modal">
+      <%= t('survey.add_question') %>
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="new-question-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel"><%= t('survey.select_question_type') %></h4>
+        </div>
+        <div class="modal-body">
+          <%= link_to t('survey.single_question'), app_survey_questions_path(@survey, question_type: 'single'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+          <%= link_to t('survey.multiply_question'), app_survey_questions_path(@survey, question_type: 'multiply'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+          <%= link_to t('survey.text_question'), app_survey_questions_path(@survey, question_type: 'text'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<br>
+<br>

@@ -1,0 +1,38 @@
+# Database structure
+
+## Survey
+- [ ] startDate
+- [ ] endDate
+- [ ] isOpen
+- [ ] startText
+- [ ] endText
+
+## Section
+- [ ] number
+- [ ] title
+- [ ] description
+
+## Question
+- [ ] number of a question
+- [ ] question text
+- [ ] question description
+- [ ] question type
+
+## QuestionChoice
+- [ ] text
+- [ ] choice number
+
+## Respondent
+- [ ] personal data
+- [ ] user number
+
+## Answer
+- [ ] answer text
+- [ ] answer choice
+
+## Answer choice
+- [ ] belongs_to Answer
+- [ ] belongs_to question choice
+
+- each question has its weight in points
+- and answer if multiply

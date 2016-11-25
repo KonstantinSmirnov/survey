@@ -1,0 +1,78 @@
+es:
+  hello: "Hola"
+
+  common:
+    title: "Title"
+    description: "description"
+    submit: "submit"
+    cancel: "cancel"
+    email: "Email"
+    sign_up: "Sign Up"
+    sign_in: "Sign In"
+    sign_out: "Sign Out"
+    password: "Password"
+    password_confirmation: "Password confirmation"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    active: "Active"
+    inactive: "Inactive"
+    list_view: "List view"
+    card_view: "Card view"
+    results: "Results"
+    share: "Share"
+    status: "Status"
+
+  survey:
+    answer_variants: "Answer variants"
+    add_answer_variant: "Добавить вариант"
+    single_question: "Single"
+    multiply_question: "Multiply"
+    text_question: "Text"
+    edit_survey: "Edit survey"
+    select_question_type: "Select question type"
+    respondents: "Respondents"
+    add_question: "Add question"
+    no_surveys: "There are no surveys yet, but you can create one!"
+    create_new_survey: "Create new survey"
+    write_here_question_text: "Write here your question"
+    write_here_answer_variant_text: "Write here your answer variant"
+    write_here_placeholder_text: "Write here placeholder text"
+
+    share:
+      title: "How do you want to gather answers?"
+      paragraph: "Copy this link and send your respondents via email:"
+
+    results:
+      respondents: "respondents passed your survey!"
+
+  header:
+    logo: "Surveys"
+    my_surveys: "My Surveys"
+
+  footer:
+    about_title: "ABOUT"
+    about_text: "We’ve been working on Go Analytics for the better part of a decade and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at themes@getbootstrap.com."
+    product_title: "PRODUCT"
+    product_features: "Features"
+    product_examples: "Examples"
+    product_tour: "Tour"
+    legal_title: "LEGAL"
+    legal_terms: "Terms"
+    legal_privacy: "Privacy"
+    legal_agreement: "Agreement"
+
+  landing:
+    welcome: "Welcome"
+    paragraph1: "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
+    paragraph2: "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
+    paragraph3: "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
+    registration: "Registration"
+    how_we_can_help_header: "How we can help you"
+    how_we_can_help_point1: "Curabitur blandit tempus porttitor."
+    how_we_can_help_point2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    how_we_can_help_point3: "Aenean lacinia bibendum nulla sed consectetur."
+    testimonials_header: "What our clients say"
+    testimonials_point1_header: "Donec id elit non mi porta gravida at eget metus."
+    testimonials_point1_content: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor."
+    testimonials_point2_header: "Maecenas faucibus mollis interdum."
+    testimonials_point2_content: "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus."

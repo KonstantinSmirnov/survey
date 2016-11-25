@@ -1,0 +1,190 @@
+// Place all the styles related to the Landing controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$dark: #1D2328;
+$medium: #F05024;
+$lightGray: #EBEFF3;
+$light: #FFFFFF;
+$lightBodyColor: #FFFDE7;
+
+.body-color {
+  background-color: $lightBodyColor;
+}
+
+ol.breadcrumb {
+  background-color: $light;
+}
+
+nav.navbar {
+  z-index: 100;
+  .nav-item.active > a {
+    color: $medium;
+  }
+}
+.active {
+  color: $medium;
+}
+
+section#main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  height: 100vh;
+  color: $lightGray;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .2);
+  }
+  .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%; // Should be the same height as parent
+    object-fit: cover;
+  }
+  .landing-main-text {
+    margin-top: 160px;
+    z-index: 100;
+  }
+}
+
+.main-title {
+  padding-bottom: 10px;
+}
+
+section#cover-image-indent {
+  margin-top: calc(100vh);
+}
+
+section#how_we_can_help, section#testimonials {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  i {
+    font-size: 4em;
+  }
+}
+
+main {
+  margin-top: 53px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: calc(100vh - 280px);
+}
+
+footer {
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background-color: $dark;
+  color: $lightGray;
+}
+
+/* ALERTS */
+.notification {
+  position: absolute;
+  border: 1px solid $dark;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  z-index: 100;
+  top: 55px;
+  right: 15px;
+  background: $light;
+}
+
+/* PAGE NOT FOUND (404) */
+#page_error {
+  height: auto;
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+
+  .error-message {
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+  }
+  .four-oh-four {
+    max-width: 400px;
+    margin: auto;
+    }
+  h1 {
+    margin: 0;
+    color: $medium;
+    font-size: 4em;
+    }
+  h2 {
+    margin: 0;
+    padding: 20px 0 30px;
+    }
+  .warning {
+    margin: 0px 0 30px 0;
+    padding: 0px 20px;
+    }
+}
+
+/* QUESTION */
+.question-form {
+  position: relative;
+  border: 1px solid $lightGray;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  &:hover {
+    background-color: $lightGray;
+  }
+  .question-form-delete {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    &:hover {
+      color: $medium;
+    }
+  }
+  .question-form-edit {
+    position: absolute;
+    top: -5px;
+    right: 15px;
+    &:hover {
+      color: $medium;
+    }
+  }
+}
+.card {
+  position: relative;
+  .card-delete {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    visibility: hidden;
+  }
+  &:hover {
+    .card-delete {
+      visibility: visible;
+    }
+  }
+  .card-header {
+    min-height: 3.5em;
+  }
+  .card-text {
+    min-height: 4em;
+  }
+  .links {
+    font-size: 1.7em;
+    a {
+      text-decoration: none;
+      &:hover {
+        color: $medium;
+      }
+    }
+  }
+}
