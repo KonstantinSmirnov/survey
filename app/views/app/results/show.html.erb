@@ -15,7 +15,7 @@
               <%= question.title %>
             </h3>
           </div>
-          <%= pie_chart question.responses.joins(:answer_variant).group(:title).count %>
+          <%= pie_chart question.responses.joins(:answer_variant).group(:title).count unless question.question_type == "text" %>
           <fieldset class="form-group">
             <% question.answer_variants.each do |answer_variant| %>
 
@@ -37,12 +37,15 @@
                   </label>
                 </div>
               <% when "text" %>
-                <div class="form-group">
-                  <label for="exampleTextarea">Answer</label>
-                  <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="<%= answer_variant.title %>"></textarea>
+                <h5>Answers:</h5>
+                <div class="text-answers-list">
+                  <% answer_variant.responses.each do |response| %>
+                    <div class="text-answer">
+                      <%= render partial: 'text_answer', locals: { object: response } %>
+                    </div>
+                  <% end %>
                 </div>
               <% end %>
-
             <% end %>
           </fieldset>
         <% end %>

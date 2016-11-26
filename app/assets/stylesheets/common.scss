@@ -234,3 +234,13 @@ footer {
     background-color: $light;
   }
 }
+
+.text-answers-list {
+  border: 1px solid $lightGray;
+  border-radius: 5px;
+  .text-answer {
+    padding: 15px;
+    border-bottom: 1px solid $lightGray;
+    &:last-child { border-bottom: none; }
+  }
+}
