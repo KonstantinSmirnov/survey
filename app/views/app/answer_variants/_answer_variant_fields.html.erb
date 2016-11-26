@@ -23,7 +23,7 @@
 </div>
 <% when "text" %>
   <div class="form-group">
-    <label>Answer</label>
+    <label><%= t('survey.answer') %></label>
     <%= f.text_area :title, class: 'form-control', rows: 3, autocomplete: 'off', placeholder: t('survey.write_here_placeholder_text') %>
   </div>
 <% end %>

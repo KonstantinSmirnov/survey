@@ -23,6 +23,8 @@ ru:
     status: "Статус"
 
   survey:
+    question_text: "Текст вопроса"
+    answer: "Ответ"
     answer_variants: "Варианты ответа"
     add_answer_variant: "Добавить вариант"
     single_question: "Одиночный выбор"

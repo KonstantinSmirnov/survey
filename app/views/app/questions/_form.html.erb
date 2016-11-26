@@ -3,7 +3,7 @@
   <% end %>
   <%= form_for [:app, question.survey, question], html: { multipart: true }, :remote => true do |f| %>
     <div class="form-group">
-      <%= f.label :title, t('common.title') %>
+      <%= f.label :title, t('survey.question_text') %>
       <%= f.text_field :title, autocomplete: 'off', class: 'form-control', placeholder: t('survey.write_here_question_text') %>
     </div>
     <div class="form-group">
