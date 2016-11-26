@@ -14,7 +14,11 @@
             </span>
           </div>
         </form>
-        <%= render partial: 'share_buttons', locals: { object: @survey } %>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= render partial: 'share_buttons', locals: { object: @survey } %>
+          </div>
+        </div>
       </div>
 
       <div class="col-sm-4">
