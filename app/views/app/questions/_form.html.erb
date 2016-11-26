@@ -8,7 +8,7 @@
   </div>
   <div class="form-group" id="question-<%= question.id %>-add-description-link">
     <% if question.description.blank? %>
-      <%= link_to "Add description", app_survey_question_show_description_path(question.survey, question), remote: true %>
+      <%= link_to t('survey.add_description'), app_survey_question_show_description_path(question.survey, question), remote: true %>
     <% end %>
   </div>
   <div class="form-group" id="question-<%= question.id %>-description">

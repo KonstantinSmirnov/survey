@@ -23,6 +23,7 @@ ru:
     status: "Статус"
 
   survey:
+    add_description: "Добавить описание"
     question_text: "Текст вопроса"
     answer: "Ответ"
     mandatory: "Обязательный вопрос"

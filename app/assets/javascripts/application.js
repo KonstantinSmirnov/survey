@@ -15,6 +15,6 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require chartkick
-//= require froala_editor.min.js
+//= require ckeditor-jquery
 //= require turbolinks
 //= require_tree .
