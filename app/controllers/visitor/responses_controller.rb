@@ -2,8 +2,7 @@ class Visitor::ResponsesController < VisitorController
   protect_from_forgery with: :null_session
 
   def create
-    p "!!!!!!!!!!!!!!!!!!!!"
-    p params.except(:action, :controller)
+
     unless params.except(:action, :controller).blank?
 
       first_question_id = params.except(:action, :controller).first[0].split('-').last
@@ -24,13 +23,15 @@ class Visitor::ResponsesController < VisitorController
             response = Response.create(question_id: question_id, answer_variant_id: answer_variant_id, respondent: respondent)
           end
         when "text"
-          answer_variant_id = question.answer_variants.first.id
-          question_id = question.id
-          text = value
-          response = Response.create(question_id: question_id, answer_variant_id: answer_variant_id, respondent: respondent, text: text)
+          unless value.blank?
+            answer_variant_id = question.answer_variants.first.id
+            question_id = question.id
+            text = value
+            response = Response.create(question_id: question_id, answer_variant_id: answer_variant_id, respondent: respondent, text: text)
+          end
         end
       end
-      
+
     end
 
     redirect_to responses_path
