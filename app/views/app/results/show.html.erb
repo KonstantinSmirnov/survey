@@ -12,9 +12,8 @@
         <% @survey.questions.each do |question| %>
           <div class="form-group">
             <h3>
-              <%= question.title %>
+              <%= question.title %><%= '*' if question.mandatory %>
             </h3>
-            <p><%= t('survey.mandatory') if question.mandatory %></p>
           </div>
 
 
