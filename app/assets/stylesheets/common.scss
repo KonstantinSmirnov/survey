@@ -141,11 +141,15 @@ footer {
   margin-bottom: 10px;
   &:hover {
     background-color: $lightGray;
+    .question-form-delete, .question-form-edit {
+      visibility: visible;
+    }
   }
   .question-form-delete {
     position: absolute;
     top: -5px;
     right: -5px;
+    visibility: hidden;
     &:hover {
       color: $medium;
     }
@@ -154,6 +158,7 @@ footer {
     position: absolute;
     top: -5px;
     right: 15px;
+    visibility: hidden;
     &:hover {
       color: $medium;
     }
