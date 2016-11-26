@@ -1,5 +1,15 @@
 jQuery ($) ->
   $(document).on "turbolinks:load ajaxComplete", ->
+    $('.wysywyg_editor').froalaEditor
+      toolbarButtons: [
+        'bold'
+        'italic'
+        'underline'
+        'strikeThrough'
+        'outdent'
+        'indent'
+        'insertHR'
+      ]
     $(".notification").delay(5000).fadeOut()
     $(".delete_answer_variant").on "click", ->
       $(this).prev('input[type=hidden]').val('1')
