@@ -10,6 +10,7 @@ jQuery ($) ->
         'indent'
         'insertHR'
       ]
+      theme: 'gray'
     $(".notification").delay(5000).fadeOut()
     $(".delete_answer_variant").on "click", ->
       $(this).prev('input[type=hidden]').val('1')
