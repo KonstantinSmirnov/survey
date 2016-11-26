@@ -5,14 +5,13 @@
   <div class="card-block">
     <p class="card-text"><%= truncate(survey.description, length: 50) %></p>
 
-    <p class="card-title"><%= t('survey.respondents') %>: <%= survey.respondents.count %></p>
-
     <div class="links text-xs-center">
       <%= link_to app_survey_path(survey) do %>
-        <i class="fa fa-share-square-o" title="Share survey with people"></i>
+        <i class="fa fa-share-alt-square" title="Share survey with people"></i>
       <% end %>
+      |
       <%= link_to app_show_survey_results_path(survey) do %>
-        <i class="fa fa-tachometer" title="See and analyze results"></i>
+        <i class="fa fa-user" title="See and analyze results"><%= survey.respondents.count %></i>
       <% end %>
 
       <%= link_to app_survey_path(survey), method: :delete, data: { confirm: t('common.confirm') }, remote: true do %>
