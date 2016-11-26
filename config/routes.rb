@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :surveys do
       get 'surveys/activate', as: 'activate'
       resources :questions do
+        get 'show_description', to: 'questions#show_description', as: 'show_description'
         resources :answer_variants
       end
     end

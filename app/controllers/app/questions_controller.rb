@@ -54,10 +54,16 @@ class App::QuestionsController < AppController
     end
   end
 
+  def show_description
+    respond_to do |format|
+      format.js { render 'show_description', locals: { question: @question } }
+    end
+  end
+
   private
 
   def question_params
-    params.require(:question).permit(:title, :mandatory,
+    params.require(:question).permit(:title, :mandatory, :description,
       :answer_variants_attributes => [:id, :title, :_destroy]
                                     )
   end

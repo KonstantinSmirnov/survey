@@ -1,0 +1,9 @@
+<%
+  @question = Question.find(params[:question_id])
+  form_for [:app, @question.survey, @question] do |f|
+    @question_form = f
+  end
+%>
+
+$("#question-<%= @question.id %>-description").html("<%= escape_javascript(render partial: 'question_description', locals: { f: @question_form }) %>");
+$("#question-<%= @question.id %>-add-description-link").hide();

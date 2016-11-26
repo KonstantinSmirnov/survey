@@ -7,6 +7,7 @@
 
 <div class="form-group">
   <h3><%= question.title.present? ? question.title : t('survey.write_here_question_text') %><%= '*' if question.mandatory %></h3>
+  <%= question.description.html_safe unless question.description.blank? %>
 </div>
 
 <% case question.question_type %>

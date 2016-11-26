@@ -6,6 +6,14 @@
       <%= f.label :title, t('survey.question_text') %>
       <%= f.text_field :title, autocomplete: 'off', class: 'form-control', placeholder: t('survey.write_here_question_text') %>
     </div>
+    <div class="form-group" id="question-<%= question.id %>-add-description-link">
+      <% if question.description.blank? %>
+        <%= link_to "Add description", app_survey_question_show_description_path(question.survey, question), remote: true %>
+      <% end %>
+    </div>
+    <div class="form-group" id="question-<%= question.id %>-description">
+      <%= render partial: 'question_description', locals: { f: f } unless question.description.blank? %>
+    </div>
     <div class="form-check">
       <label class="form-check-label">
         <%= f.check_box :mandatory, class: 'form-check-input' %>
@@ -30,3 +38,4 @@
       <%= link_to t('common.cancel'), app_survey_question_path(question.survey, question), remote: true, class: 'btn btn-outline-secondary' %>
     </div>
   <% end %>
+<%= tinymce %>
