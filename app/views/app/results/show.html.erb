@@ -15,29 +15,15 @@
               <%= question.title %>
             </h3>
           </div>
-          <%= pie_chart question.responses.joins(:answer_variant).group(:title).count unless question.question_type == "text" %>
+
+
+          <%= pie_chart question.responses.joins(:answer_variant).group(:title).count, library: {legend: {} } unless question.question_type == "text" %>
           <fieldset class="form-group">
             <% question.answer_variants.each do |answer_variant| %>
 
             <% case answer_variant.question.question_type %>
-              <% when "single" %>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="question-<%= answer_variant.question.id %>">
-                    <%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %>
-                    - <%= answer_variant.responses.count %>
-                  </label>
-                </div>
-              <% when "multiply" %>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="">
-                    <%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %>
-                    - <%= answer_variant.responses.count %>
-                  </label>
-                </div>
               <% when "text" %>
-                <h5>Answers:</h5>
+                <h5><%= answer_variant.responses.count %> answers:</h5>
                 <div class="text-answers-list">
                   <% answer_variant.responses.each do |response| %>
                     <div class="text-answer">
