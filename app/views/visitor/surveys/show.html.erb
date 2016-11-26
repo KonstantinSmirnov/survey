@@ -14,8 +14,8 @@
               <% case question.question_type %>
               <% when "single" %>
                 <fieldset class="form-group">
-                  <legend><%= question.title %><%= '*' if question.mandatory %></legend>
-                  <%= question.description.html_safe %>
+                  <legend><h4><%= question.title %><%= '*' if question.mandatory %></h4></legend>
+                  <%= question.description.html_safe unless question.description.blank? %>
                   <% question.answer_variants.each do |answer_variant| %>
                     <div class="form-check">
                       <label class="form-check-label">
@@ -27,8 +27,8 @@
                 </fieldset>
               <% when "multiply" %>
                 <fieldset class="form-group">
-                  <legend><%= question.title %><%= '*' if question.mandatory %></legend>
-                  <%= question.description.html_safe %>
+                  <legend><h4><%= question.title %><%= '*' if question.mandatory %></h4></legend>
+                  <%= question.description.html_safe unless question.description.blank? %>
                   <% question.answer_variants.each do |answer_variant| %>
                     <div class="form-check">
                       <label class="form-check-label">
@@ -40,8 +40,8 @@
                 </fieldset>
               <% when "text" %>
                 <div class="form-group">
-                  <label for="question-<%= question.id %>"><%= question.title %><%= '*' if question.mandatory %></label>
-                  <%= question.description.html_safe %>
+                  <label for="question-<%= question.id %>"><h4><%= question.title %><%= '*' if question.mandatory %></h4></label>
+                  <%= question.description.html_safe unless question.description.blank? %>
                   <textarea class="form-control" id="question-<%= question.id %>" rows="3" name="question-<%= question.id %>" placeholder="<%= question.answer_variants.first.title %>"></textarea>
                 </div>
               <% else %>
