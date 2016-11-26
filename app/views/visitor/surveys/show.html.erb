@@ -15,6 +15,7 @@
               <% when "single" %>
                 <fieldset class="form-group">
                   <legend><%= question.title %><%= '*' if question.mandatory %></legend>
+                  <%= question.description.html_safe %>
                   <% question.answer_variants.each do |answer_variant| %>
                     <div class="form-check">
                       <label class="form-check-label">
@@ -27,6 +28,7 @@
               <% when "multiply" %>
                 <fieldset class="form-group">
                   <legend><%= question.title %><%= '*' if question.mandatory %></legend>
+                  <%= question.description.html_safe %>
                   <% question.answer_variants.each do |answer_variant| %>
                     <div class="form-check">
                       <label class="form-check-label">
@@ -39,6 +41,7 @@
               <% when "text" %>
                 <div class="form-group">
                   <label for="question-<%= question.id %>"><%= question.title %><%= '*' if question.mandatory %></label>
+                  <%= question.description.html_safe %>
                   <textarea class="form-control" id="question-<%= question.id %>" rows="3" name="question-<%= question.id %>" placeholder="<%= question.answer_variants.first.title %>"></textarea>
                 </div>
               <% else %>
