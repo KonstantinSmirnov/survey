@@ -14,11 +14,11 @@
               <% case question.question_type %>
               <% when "single" %>
                 <fieldset class="form-group">
-                  <legend><%= question.title %></legend>
+                  <legend><%= question.title %><%= '*' if question.mandatory %></legend>
                   <% question.answer_variants.each do |answer_variant| %>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>">
+                        <input type="radio" class="form-check-input" name="question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>" <%= 'required' if question.mandatory %>>
                         <%= answer_variant.title %>
                       </label>
                     </div>
@@ -26,11 +26,11 @@
                 </fieldset>
               <% when "multiply" %>
                 <fieldset class="form-group">
-                  <legend><%= question.title %></legend>
+                  <legend><%= question.title %><%= '*' if question.mandatory %></legend>
                   <% question.answer_variants.each do |answer_variant| %>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="question-<%= question.id %>[]" value="answer-variant-<%= answer_variant.id %>">
+                        <input type="checkbox" class="form-check-input" name="question-<%= question.id %>[]" value="answer-variant-<%= answer_variant.id %>" <%= 'required' if question.mandatory %>>
                         <%= answer_variant.title %>
                       </label>
                     </div>
@@ -38,7 +38,7 @@
                 </fieldset>
               <% when "text" %>
                 <div class="form-group">
-                  <label for="question-<%= question.id %>"><%= question.title %></label>
+                  <label for="question-<%= question.id %>"><%= question.title %><%= '*' if question.mandatory %></label>
                   <textarea class="form-control" id="question-<%= question.id %>" rows="3" name="question-<%= question.id %>"></textarea>
                 </div>
               <% else %>
@@ -50,6 +50,7 @@
             <button type="submit" class="btn btn-primary"><%= t('common.submit') %></button>
           </div>
         </form>
+        <p>* - <%= t('survey.mandatory') %></p>
 
       <% else %>
         <div id="page_error">

@@ -39,10 +39,8 @@ class App::QuestionsController < AppController
     @question = Question.find(params[:id])
     respond_to do |format|
       if @question.update_attributes(question_params)
-        flash.now[:success] = "Updated"
         format.js { render 'update', locals: { question: @question } }
       else
-        flash.now[:danger] = "Could not update"
         format.js { render 'error_message' }
       end
     end
@@ -59,7 +57,7 @@ class App::QuestionsController < AppController
   private
 
   def question_params
-    params.require(:question).permit(:title,
+    params.require(:question).permit(:title, :mandatory,
       :answer_variants_attributes => [:id, :title, :_destroy]
                                     )
   end
