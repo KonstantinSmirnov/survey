@@ -15,5 +15,6 @@
 //= require tether
 //= require bootstrap-sprockets
 //= require chartkick
+//= require tinymce
 //= require turbolinks
 //= require_tree .
