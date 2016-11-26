@@ -18,7 +18,7 @@
                   <% question.answer_variants.each do |answer_variant| %>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>" <%= 'required' if question.mandatory %>>
+                        <input type="radio" class="form-check-input" name="question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>">
                         <%= answer_variant.title %>
                       </label>
                     </div>
@@ -30,7 +30,7 @@
                   <% question.answer_variants.each do |answer_variant| %>
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" name="question-<%= question.id %>[]" value="answer-variant-<%= answer_variant.id %>" <%= 'required' if question.mandatory %>>
+                        <input type="checkbox" class="form-check-input" name="question-<%= question.id %>[]" value="answer-variant-<%= answer_variant.id %>">
                         <%= answer_variant.title %>
                       </label>
                     </div>
