@@ -10,7 +10,7 @@
         <hr>
         <form accept-charset="UTF-8" method='post' action='/responses'>
           <% @survey.questions.each do |question| %>
-            <div class="user-question">
+            <div class="user-question shadow">
               <% case question.question_type %>
               <% when "single" %>
                 <fieldset class="form-group">
