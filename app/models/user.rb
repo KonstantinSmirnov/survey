@@ -7,5 +7,5 @@ class User < ApplicationRecord
   enum surveys_view: [:surveys_list_view, :surveys_card_view]
   enum locale: [:en, :ru, :es]
 
-  has_many :surveys
+  has_many :surveys, dependent: :destroy
 end

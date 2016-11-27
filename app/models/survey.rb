@@ -7,10 +7,10 @@ class Survey < ApplicationRecord
   enum status: [:active, :inactive]
 
   belongs_to :user
-  has_many :questions
-  
-  has_many :respondents
-  
+  has_many :questions, dependent: :destroy
+
+  has_many :respondents, dependent: :destroy
+
   private
 
   def generate_encrypted_link
