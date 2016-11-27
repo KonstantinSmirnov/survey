@@ -1,4 +1,4 @@
-<div id="survey-header" class="question-form">
+<div id="survey-header" class="question-form shadow">
   <% unless @survey.persisted? %>
     <%= render partial: 'survey_header_form', locals: { survey: @survey } %>
   <% else %>

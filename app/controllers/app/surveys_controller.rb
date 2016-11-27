@@ -11,7 +11,7 @@ class App::SurveysController < AppController
   def create
     @survey = current_user.surveys.new(survey_params)
     if @survey.save
-      flash[:success] = "New survey created!"
+      # flash[:success] = "New survey created!"
       redirect_to edit_app_survey_path(@survey)
     else
       flash[:danger] = "You entered incorrect data. Try again."
@@ -26,7 +26,6 @@ class App::SurveysController < AppController
   def update
     @survey = Survey.find(params[:id])
     if @survey.update_attributes(survey_params)
-      flash[:success] = "Updated"
       redirect_to edit_app_survey_path(@survey)
     else
       flash.now[:danger] = "Can not be updated"
@@ -41,7 +40,6 @@ class App::SurveysController < AppController
   def destroy
     @survey = Survey.find(params[:id])
     @survey.destroy
-    flash[:success] = "Deleted"
     redirect_to app_surveys_path
   end
 
