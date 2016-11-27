@@ -9,7 +9,7 @@
             <input type="text" class="form-control" value='<%= "#{request.base_url }/surveys/#{@survey.encrypted_link}"  %>'>
             <span class="input-group-btn">
               <%= link_to survey_path(@survey.encrypted_link), target: "_blank", class: 'btn btn-secondary' do %>
-                <i class="fa fa-share-square-o" title="Share survey with people"></i>
+                <%= t('common.open') %>
               <% end %>
             </span>
           </div>

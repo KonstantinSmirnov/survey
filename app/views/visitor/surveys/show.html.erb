@@ -49,11 +49,11 @@
               <% end %>
             </div>
           <% end %>
+          <p>* - <%= t('survey.mandatory') %></p>
           <div class="text-xs-center">
-            <button type="submit" class="btn btn-primary"><%= t('common.submit') %></button>
+            <button type="submit" class="btn btn-primary"><%= t('survey.send_answers') %></button>
           </div>
         </form>
-        <p>* - <%= t('survey.mandatory') %></p>
 
       <% else %>
         <div id="page_error">

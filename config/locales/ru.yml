@@ -21,6 +21,7 @@ ru:
     results: "Результаты"
     share: "Поделиться"
     status: "Статус"
+    open: "Открыть"
 
   survey:
     add_description: "Добавить описание"
@@ -41,6 +42,7 @@ ru:
     write_here_question_text: "Напишите здесь текст вопроса"
     write_here_answer_variant_text: "Напишите здесь вариант ответа"
     write_here_placeholder_text: "Напишите здесь текст подсказки"
+    send_answers: "Отправить ответы"
 
     share:
       title: "Как вы хотите собрать ответы?"
