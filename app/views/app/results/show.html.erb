@@ -24,7 +24,7 @@
               <% when "text" %>
                 <h5><%= answer_variant.responses.count %> answers:</h5>
                 <div class="text-answers-list">
-                  <% @responses = answer_variant.responses.paginate(page: params["answer_#{answer_variant.id}_page".to_sym], :per_page => 5) %>
+                  <% @responses = answer_variant.responses.paginate(page: params["answer_#{answer_variant.id}_page".to_sym], :per_page => 10) %>
                   <% @responses.each do |response| %>
                     <div class="text-answer">
                       <%= render partial: 'text_answer', locals: { object: response } %>
