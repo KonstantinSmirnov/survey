@@ -139,6 +139,9 @@ footer {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
+  i {
+    font-size: 1.7em
+  }
   &:hover {
     background-color: $lightGray;
     .question-form-delete, .question-form-edit {
@@ -147,8 +150,8 @@ footer {
   }
   .question-form-delete {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -10px;
+    right: -10px;
     visibility: hidden;
     &:hover {
       color: $medium;
@@ -156,8 +159,8 @@ footer {
   }
   .question-form-edit {
     position: absolute;
-    top: -5px;
-    right: 15px;
+    top: -10px;
+    right: 20px;
     visibility: hidden;
     &:hover {
       color: $medium;
