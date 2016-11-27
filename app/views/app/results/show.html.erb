@@ -24,11 +24,15 @@
               <% when "text" %>
                 <h5><%= answer_variant.responses.count %> answers:</h5>
                 <div class="text-answers-list">
-                  <% answer_variant.responses.each do |response| %>
+                  <% @responses = answer_variant.responses.paginate(page: params["answer_#{answer_variant.id}_page".to_sym], :per_page => 5) %>
+                  <% @responses.each do |response| %>
                     <div class="text-answer">
                       <%= render partial: 'text_answer', locals: { object: response } %>
                     </div>
                   <% end %>
+                  <div class="text-xs-center">
+                    <%= will_paginate @responses, :param_name => "answer_#{answer_variant.id}_page".to_sym, :previous_label => '<', :next_label => '>' %>
+                  </div>
                 </div>
               <% end %>
             <% end %>
