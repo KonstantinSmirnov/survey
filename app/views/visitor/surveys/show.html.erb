@@ -44,6 +44,28 @@
                   <%= question.description.html_safe unless question.description.blank? %>
                   <textarea class="form-control" id="question-<%= question.id %>" rows="3" name="question-<%= question.id %>" placeholder="<%= question.answer_variants.first.title %>"></textarea>
                 </div>
+              <% when "scale" %>
+                <fieldset class="form-group">
+                  <legend><h4><%= question.title %><%= '*' if question.mandatory %></h4></legend>
+                  <%= question.description.html_safe unless question.description.blank? %>
+                  <% question.answer_variants.each do |answer_variant| %>
+                    <label><%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %></label>
+                    <br>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="button" class="btn btn-secondary">1</button>
+                      <button type="button" class="btn btn-secondary">2</button>
+                      <button type="button" class="btn btn-secondary">3</button>
+                      <button type="button" class="btn btn-secondary">4</button>
+                      <button type="button" class="btn btn-secondary">5</button>
+                      <button type="button" class="btn btn-secondary">6</button>
+                      <button type="button" class="btn btn-secondary">7</button>
+                      <button type="button" class="btn btn-secondary">8</button>
+                      <button type="button" class="btn btn-secondary">9</button>
+                      <button type="button" class="btn btn-secondary">10</button>
+                    </div>
+                    <br>
+                  <% end %>
+                </fieldset>
               <% else %>
                 Another question!
               <% end %>

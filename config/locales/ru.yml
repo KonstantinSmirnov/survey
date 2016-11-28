@@ -33,6 +33,7 @@ ru:
     single_question: "Одиночный выбор"
     multiply_question: "Множественный выбор"
     text_question: "Текстовый"
+    scale_question: "Шкала"
     edit_survey: "Редактировать опрос"
     select_question_type: "Выберите тип вопроса"
     respondents: "Респонденты"

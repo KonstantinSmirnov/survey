@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
 
-  enum question_type: [:single, :multiply, :text]
+  enum question_type: [:single, :multiply, :text, :scale]
 
   belongs_to :survey
   has_many :answer_variants, dependent: :destroy

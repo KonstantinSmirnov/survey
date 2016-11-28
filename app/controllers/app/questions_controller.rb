@@ -21,6 +21,9 @@ class App::QuestionsController < AppController
     when "text"
       @question.text!
       @question.answer_variants.create(title: "")
+    when "scale"
+      @question.scale!
+      @question.answer_variants.create(title: "")
     end
     @question.save
     respond_to do |format|

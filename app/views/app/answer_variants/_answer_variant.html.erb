@@ -18,4 +18,21 @@
     <label for="exampleTextarea"><%= t('survey.answer') %></label>
     <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="<%= answer_variant.title %>"></textarea>
   </div>
+<% when 'scale' %>
+  <div class="form-group">
+    <label><%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %></label>
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary">1</button>
+      <button type="button" class="btn btn-secondary">2</button>
+      <button type="button" class="btn btn-secondary">3</button>
+      <button type="button" class="btn btn-secondary">4</button>
+      <button type="button" class="btn btn-secondary">5</button>
+      <button type="button" class="btn btn-secondary">6</button>
+      <button type="button" class="btn btn-secondary">7</button>
+      <button type="button" class="btn btn-secondary">8</button>
+      <button type="button" class="btn btn-secondary">9</button>
+      <button type="button" class="btn btn-secondary">10</button>
+    </div>
+  </div>
 <% end %>

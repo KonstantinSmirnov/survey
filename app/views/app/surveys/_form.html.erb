@@ -30,6 +30,7 @@
           <%= link_to t('survey.single_question'), app_survey_questions_path(@survey, question_type: 'single'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
           <%= link_to t('survey.multiply_question'), app_survey_questions_path(@survey, question_type: 'multiply'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
           <%= link_to t('survey.text_question'), app_survey_questions_path(@survey, question_type: 'text'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
+          <%= link_to t('survey.scale_question'), app_survey_questions_path(@survey, question_type: 'scale'), method: :post, remote: true, class: 'btn btn-outline-primary', "data-dismiss" => "modal" %>
         </div>
       </div>
     </div>

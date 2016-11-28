@@ -10,17 +10,6 @@
   <%= question.description.html_safe unless question.description.blank? %>
 </div>
 
-<% case question.question_type %>
-<% when "single" %>
-  <div id="question-<%= question.id %>-answer-variants">
-    <%= render partial: 'app/answer_variants/answer_variants', locals: {question: question} %>
-  </div>
-<% when "multiply" %>
-  <div id="question-<%= question.id %>-answer-variants">
-    <%= render partial: 'app/answer_variants/answer_variants', locals: {question: question} %>
-  </div>
-<% when "text" %>
-  <div id="question-<%= question.id %>-answer-variants">
-    <%= render partial: 'app/answer_variants/answer_variants', locals: {question: question} %>
-  </div>
-<% end %>
+<div id="question-<%= question.id %>-answer-variants">
+  <%= render partial: 'app/answer_variants/answer_variants', locals: {question: question} %>
+</div>
