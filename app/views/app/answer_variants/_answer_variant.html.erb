@@ -20,7 +20,7 @@
   </div>
 <% when 'scale' %>
   <div class="form-group">
-    <label><%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %></label>
+    <label><%= answer_variant.title %></label>
     <br>
     <label class="form-check-inline">
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
