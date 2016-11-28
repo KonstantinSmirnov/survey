@@ -16,10 +16,12 @@
           </div>
 
 
-          <%= pie_chart question.responses.joins(:answer_variant).group(:title).count, library: {legend: {} } unless question.question_type == "text" %>
+          <%= pie_chart question.responses.joins(:answer_variant).group(:title).count, library: {legend: {} } if question.question_type == "single" %>
+          <%= pie_chart question.responses.joins(:answer_variant).group(:title).count, library: {legend: {} } if question.question_type == "multiply" %>
+
+          <!-- TEXT ANSWERS -->
           <fieldset class="form-group">
             <% question.answer_variants.each do |answer_variant| %>
-
             <% case answer_variant.question.question_type %>
               <% when "text" %>
                 <h5><%= answer_variant.responses.count %> answers:</h5>
@@ -37,6 +39,15 @@
               <% end %>
             <% end %>
           </fieldset>
+          
+          <!-- SCALE ANSWERS -->
+          <% question.answer_variants.each do |answer_variant| %>
+            <% case answer_variant.question.question_type %>
+            <% when "scale" %>
+              <h5><%= answer_variant.title %></h5>
+              <%= column_chart answer_variant.responses.group(:selected_point).count %>
+            <% end %>
+          <% end %>
         <% end %>
       <% end %>
     </div>

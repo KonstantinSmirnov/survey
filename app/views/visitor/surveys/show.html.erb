@@ -45,27 +45,43 @@
                   <textarea class="form-control" id="question-<%= question.id %>" rows="3" name="question-<%= question.id %>" placeholder="<%= question.answer_variants.first.title %>"></textarea>
                 </div>
               <% when "scale" %>
-                <fieldset class="form-group">
                   <legend><h4><%= question.title %><%= '*' if question.mandatory %></h4></legend>
                   <%= question.description.html_safe unless question.description.blank? %>
                   <% question.answer_variants.each do |answer_variant| %>
-                    <label><%= answer_variant.title.present? ? answer_variant.title : t('survey.write_here_answer_variant_text') %></label>
-                    <br>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                      <button type="button" class="btn btn-secondary">1</button>
-                      <button type="button" class="btn btn-secondary">2</button>
-                      <button type="button" class="btn btn-secondary">3</button>
-                      <button type="button" class="btn btn-secondary">4</button>
-                      <button type="button" class="btn btn-secondary">5</button>
-                      <button type="button" class="btn btn-secondary">6</button>
-                      <button type="button" class="btn btn-secondary">7</button>
-                      <button type="button" class="btn btn-secondary">8</button>
-                      <button type="button" class="btn btn-secondary">9</button>
-                      <button type="button" class="btn btn-secondary">10</button>
-                    </div>
-                    <br>
+                    <%= answer_variant.title %>
+                    <fieldset class="form-group">
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-1"> 1
+                      </label>
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-2"> 2
+                      </label>
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-3"> 3
+                      </label>
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-4"> 4
+                      </label>
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-5"> 5
+                      </label>
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-6"> 6
+                      </label>
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-7"> 7
+                      </label>
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-8"> 8
+                      </label>
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-9"> 9
+                      </label>
+                      <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-10"> 10
+                      </label>
+                    </fieldset>
                   <% end %>
-                </fieldset>
               <% else %>
                 Another question!
               <% end %>

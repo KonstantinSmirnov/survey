@@ -29,6 +29,10 @@ class Visitor::ResponsesController < VisitorController
             text = value
             response = Response.create(question_id: question_id, answer_variant_id: answer_variant_id, respondent: respondent, text: text)
           end
+        when "scale"
+          selected_point = value.split('-')[-1]
+          answer_variant_id = value.split('-')[-2]
+          response = Response.create(question_id: question_id, answer_variant_id: answer_variant_id, respondent: respondent, selected_point: selected_point)
         end
       end
 
