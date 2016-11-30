@@ -88,8 +88,12 @@ section#cover-image-indent {
   margin-top: 100vh;
 }
 
-section#how_we_can_help, section#testimonials {
+section#how_we_can_help {
   padding-top: 50px;
+  margin-top: -63px;
+}
+
+section#how_we_can_help, section#testimonials {
   padding-bottom: 50px;
   background-color: $light;
   i {
