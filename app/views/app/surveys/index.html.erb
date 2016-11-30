@@ -12,7 +12,7 @@
         <%= link_to t('common.card_view'), app_get_card_view_path, class: "#{'active' if current_user.surveys_card_view?}" %>
       </span>
     </div>
-    <div class="col-xs-12" id="surveys" data-update-url="<%= sort_app_surveys_url %>">
+    <div class="col-xs-12">
       <% unless current_user.surveys.any? %>
         <h5 class="text-xs-center"><%= t('survey.no_surveys') %></h5>
       <% else %>
@@ -29,7 +29,7 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody  id="surveys" data-update-url="<%= sort_app_surveys_url %>">
             <% @surveys.each do |survey| %>
               <tr id="survey-<%= survey.id %>">
                 <%= render partial: 'survey_list_element', locals: { survey: survey } %>
@@ -42,11 +42,13 @@
 
         <% if current_user.surveys_card_view? %>
         <!-- SURVEYS CARD VIEW -->
-          <% @surveys.each do |survey| %>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="survey-<%= survey.id %>">
-              <%= render partial: 'survey_card_element', locals: { survey: survey } %>
-            </div>
-          <% end %>
+          <div id="surveys" data-update-url="<%= sort_app_surveys_url %>">
+            <% @surveys.each do |survey| %>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" id="survey-<%= survey.id %>">
+                <%= render partial: 'survey_card_element', locals: { survey: survey } %>
+              </div>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
     </div>
