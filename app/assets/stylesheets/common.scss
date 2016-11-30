@@ -6,7 +6,7 @@ $dark: #1D2328;
 $medium: #F05024;
 $lightGray: #EBEFF3;
 $light: #FFFFFF;
-$lightBodyColor: #FEFFF3;
+$lightBodyColor: #FFF8E1;
 $lightSelectionColor: #DFF3F8;
 
 .body-color {
@@ -64,8 +64,14 @@ section#main {
     object-fit: cover;
   }
   .landing-main-text {
-    margin-top: 160px;
+    margin-top: 15%;
     z-index: 100;
+  }
+  @media(min-width:768px){
+    .landing-main-text {
+      margin-top: 20%;
+      z-index: 100;
+    }
   }
 }
 
@@ -73,26 +79,30 @@ section#main {
   padding-bottom: 10px;
 }
 
+section {
+  margin-bottom: -10px;
+}
+
 section#cover-image-indent {
   margin-top: 50%;
-  margin-top: calc(100vh);
+  margin-top: 100vh;
 }
 
 section#how_we_can_help, section#testimonials {
   padding-top: 50px;
   padding-bottom: 50px;
+  background-color: $light;
   i {
     font-size: 4em;
   }
 }
 
 main {
-  margin-top: 53px;
+  padding-top: 53px;
   padding-top: 10px;
   padding-bottom: 10px;
   min-height: 400px;
   min-height: calc(100vh - 280px);
-  background-color: $lightBodyColor;
 }
 
 footer {

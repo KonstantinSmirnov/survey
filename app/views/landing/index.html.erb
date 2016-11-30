@@ -1,16 +1,16 @@
-<div class="container">
-  <div class="row">
-    <section id="main">
+<section id="main">
+  <div class="container">
+    <div class="row">
       <img src="http://data.whicdn.com/images/177237791/original.png" alt="" class="background-img" />
         <div class="container">
           <div class="row">
-            <div class="col-sm-6 landing-main-text hidden-xs-down">
+            <div class="col-sm-6 landing-main-text hidden-sm-down">
               <h1><%= t('landing.welcome') %></h1>
               <p><%= t('landing.paragraph1') %></p>
               <p><%= t('landing.paragraph2') %></p>
               <p><%= t('landing.paragraph3') %></p>
             </div>
-            <div id="registration" class="offset-sm-1 col-sm-5 landing-main-text">
+            <div class="offset-md-1 col-md-5 landing-main-text">
               <h1><%= t('landing.registration') %></h1>
 
               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -44,11 +44,16 @@
             </div>
           </div>
         </div>
-    </section>
-    <section id="cover-image-indent">
-    </section>
+      </div>
+    </div>
+  </section>
+  
+<section id="cover-image-indent">
+</section>
 
-    <section id="how_we_can_help">
+<section id="how_we_can_help">
+  <div class="container">
+    <div class="row">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-xs-center">
@@ -69,9 +74,13 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section id="testimonials">
+<section id="testimonials">
+ <div class="container">
+    <div class="row">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 text-xs-center">
@@ -90,6 +99,6 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
-</div>
+</section>
