@@ -301,3 +301,13 @@ footer {
 .color-selected {
   background-color: $lightSelectionColor !important;
 }
+
+.item-hover {
+  display: inline-block;
+  min-height: 64px;
+  border: 1px solid $lightGray;
+  background-color: $lightGray;
+  &:hover {
+    border: 1px solid $medium;
+  }
+}
