@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get 'surveys/activate', as: 'activate'
       collection { post :sort }
       resources :questions do
+        collection { post :sort }
         get 'show_description', to: 'questions#show_description', as: 'show_description'
         resources :answer_variants
       end

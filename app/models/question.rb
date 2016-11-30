@@ -1,4 +1,5 @@
 class Question < ApplicationRecord
+  acts_as_list
 
   enum question_type: [:single, :multiply, :text, :scale]
 

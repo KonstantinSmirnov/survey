@@ -7,7 +7,7 @@
 </div>
 
 <% if @survey.persisted? %>
-  <div id="questions">
+  <div id="questions" data-update-url="<%= sort_app_survey_questions_url(@survey) %>">
     <%= render partial: 'app/questions/questions' %>
   </div>
   <div id="add-question">

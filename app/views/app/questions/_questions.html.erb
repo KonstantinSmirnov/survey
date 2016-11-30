@@ -1,4 +1,4 @@
-<% @survey.questions.each do |question| %>
+<% @questions.each do |question| %>
   <div id="question-<%= question.id %>" class="question-form shadow">
     <%= render partial: 'app/questions/question', locals: { question: question } %>
   </div>

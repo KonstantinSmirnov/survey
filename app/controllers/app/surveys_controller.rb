@@ -21,6 +21,7 @@ class App::SurveysController < AppController
 
   def edit
     @survey = Survey.find(params[:id])
+    @questions = @survey.questions.order("position")
   end
 
   def update

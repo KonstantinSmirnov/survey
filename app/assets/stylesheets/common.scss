@@ -163,6 +163,11 @@ footer {
 }
 
 /* QUESTION */
+.movable {
+  &:hover {
+    cursor: move;
+  }
+}
 .question-form {
   position: relative;
   background-color: $light;

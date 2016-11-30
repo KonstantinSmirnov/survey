@@ -62,6 +62,14 @@ class App::QuestionsController < AppController
       format.js { render 'show_description', locals: { question: @question } }
     end
   end
+  
+  def sort
+    params[:question].each_with_index do |id, index|
+      Question.find(id).update_attribute(:position, index + 1)
+    end
+    
+    render nothing: true
+  end
 
   private
 
