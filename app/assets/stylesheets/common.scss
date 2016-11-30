@@ -64,12 +64,12 @@ section#main {
     object-fit: cover;
   }
   .landing-main-text {
-    margin-top: 15%;
+    margin-top: 80px;
     z-index: 100;
   }
   @media(min-width:768px){
     .landing-main-text {
-      margin-top: 20%;
+      margin-top: 15vh;
       z-index: 100;
     }
   }
