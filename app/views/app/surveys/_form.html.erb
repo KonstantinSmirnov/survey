@@ -26,7 +26,7 @@
           </button>
           <h4 class="modal-title" id="myModalLabel"><%= t('survey.select_question_type') %></h4>
         </div>
-        <div class="modal-body">
+        <div class="modal-body text-xs-center">
           <%= link_to image_tag('radiobutton_list'), app_survey_questions_path(@survey, question_type: 'single'), method: :post, remote: true, class: 'item-hover', "data-dismiss" => "modal", title: "#{t('survey.single_question')}" %>
           <%= link_to image_tag('checkbox_list'), app_survey_questions_path(@survey, question_type: 'multiply'), method: :post, remote: true, class: 'item-hover', "data-dismiss" => "modal", title: "#{t('survey.multiply_question')}" %>
           <%= link_to image_tag('text'), app_survey_questions_path(@survey, question_type: 'text'), method: :post, remote: true, class: 'item-hover', "data-dismiss" => "modal", title: "#{t('survey.text_question')}" %>
