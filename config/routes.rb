@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get 'surveys/:id/show_results', to: 'results#show', as: 'show_survey_results'
     resources :surveys do
       get 'surveys/activate', as: 'activate'
+      collection { post :sort }
       resources :questions do
         get 'show_description', to: 'questions#show_description', as: 'show_description'
         resources :answer_variants

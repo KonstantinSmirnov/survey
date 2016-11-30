@@ -1,4 +1,4 @@
-<div class="card survey-card shadow">
+<div class="card survey-card shadow" id="survey_<%= survey.id %>">
   <h5 class="card-header">
     <%= link_to "#{truncate(survey.title, length: 38)}", edit_app_survey_path(survey), class: ''%>
   </h5>

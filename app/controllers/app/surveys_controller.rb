@@ -1,7 +1,7 @@
 class App::SurveysController < AppController
 
   def index
-    @surveys = current_user.surveys
+    @surveys = current_user.surveys.order("position DESC")
   end
 
   def new
@@ -69,10 +69,18 @@ class App::SurveysController < AppController
       format.js { render 'edit_header', locals: { survey: @survey } }
     end
   end
+  
+  def sort
+    params[:survey].each_with_index do |id, index|
+      Survey.find(id).update_attribute(:position, params[:survey].count - index)
+    end
+    
+    render nothing: true
+  end
 
   private
 
   def survey_params
-    params.require(:survey).permit(:title, :description)
+    params.require(:survey).permit(:title, :description, :position)
   end
 end

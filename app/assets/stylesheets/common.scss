@@ -200,6 +200,9 @@ footer {
 }
 .card {
   position: relative;
+  &:hover {
+    cursor: move;
+  }
   .card-delete {
     position: absolute;
     top: -10px;
