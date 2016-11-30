@@ -58,15 +58,17 @@ ru:
 
   footer:
     about_title: "О нас"
-    about_text: "We’ve been working on Go Analytics for the better part of a decade and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at themes@getbootstrap.com."
+    about_text: "Приложение 'Survey' разработано специально для проведения небольших опросов."
     product_title: "Продукт"
     product_features: "Функции"
     product_examples: "Примеры"
     product_tour: "Обзор"
-    legal_title: "LEGAL"
-    legal_terms: "Terms"
-    legal_privacy: "Privacy"
-    legal_agreement: "Agreement"
+    legal_title: "Юридическая информация"
+    legal_terms: "Условия"
+    legal_privacy: "Конфиденциальность"
+    legal_agreement: "Пользовательское соглашение"
+    all_rights_reserved: "Все права защищены!"
+    konstantin_smirnov: "Константин Смирнов"
 
   landing:
     welcome: "Добро пожаловать!"
