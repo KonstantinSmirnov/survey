@@ -44,6 +44,10 @@ ru:
     write_here_answer_variant_text: "Напишите здесь вариант ответа"
     write_here_placeholder_text: "Напишите здесь текст подсказки"
     send_answers: "Отправить ответы"
+    reply:
+      thank_you: "Спасибо!"
+      your_answers_will_help_us: "Ваши ответы нам очень помогут!"
+
 
     share:
       title: "Как вы хотите собрать ответы?"
