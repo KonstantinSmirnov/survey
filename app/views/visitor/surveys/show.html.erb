@@ -9,7 +9,7 @@
         <%= @survey.description.html_safe %>
         <hr>
         <form accept-charset="UTF-8" method='post' action='/responses'>
-          <% @survey.questions.each do |question| %>
+          <% @questions.each do |question| %>
             <div class="user-question shadow">
               <% case question.question_type %>
               <% when "single" %>
