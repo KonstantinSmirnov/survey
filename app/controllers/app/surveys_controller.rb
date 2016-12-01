@@ -14,7 +14,7 @@ class App::SurveysController < AppController
       # flash[:success] = "New survey created!"
       redirect_to edit_app_survey_path(@survey)
     else
-      flash[:danger] = "You entered incorrect data. Try again."
+      flash.now[:danger] = "You entered incorrect data. Try again."
       render 'new'
     end
   end
