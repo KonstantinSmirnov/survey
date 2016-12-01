@@ -2,7 +2,7 @@ class Survey < ApplicationRecord
   require 'securerandom'
   acts_as_list
 
-  validates :title, :description, :user, presence: true
+  validates :title, :user, presence: true
   before_create :generate_encrypted_link
 
   enum status: [:active, :inactive]
