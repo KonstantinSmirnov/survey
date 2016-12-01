@@ -6,11 +6,13 @@
           <%= link_to t('survey.create_new_survey'), new_app_survey_path, class: 'btn btn-outline-primary' %>
         </span>
       </h1>
-      <span>
-        <%= link_to t('common.list_view'), app_get_list_view_path, class: "#{'active' if current_user.surveys_list_view?}" %>
-        |
-        <%= link_to t('common.card_view'), app_get_card_view_path, class: "#{'active' if current_user.surveys_card_view?}" %>
-      </span>
+      <% if current_user.surveys.any? %>
+        <span>
+          <%= link_to t('common.list_view'), app_get_list_view_path, class: "#{'active' if current_user.surveys_list_view?}" %>
+          |
+          <%= link_to t('common.card_view'), app_get_card_view_path, class: "#{'active' if current_user.surveys_card_view?}" %>
+        </span>
+      <% end %>
     </div>
     <div class="col-xs-12">
       <% unless current_user.surveys.any? %>

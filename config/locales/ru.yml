@@ -39,7 +39,7 @@ ru:
     select_question_type: "Выберите тип вопроса"
     respondents: "Респонденты"
     add_question: "Добавить вопрос"
-    no_surveys: "Здесь пока нет опросов, создайте один!"
+    no_surveys: "Вы еще не создали ни одного опроса."
     create_new_survey: "Новый опрос"
     write_here_question_text: "Напишите здесь текст вопроса"
     write_here_answer_variant_text: "Напишите здесь вариант ответа"
