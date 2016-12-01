@@ -29,3 +29,6 @@ procfile
 rubocop_pre_commit_hook.rb
 test
 *.swp
+
+# remove Paperclip images folder
+public/system/
