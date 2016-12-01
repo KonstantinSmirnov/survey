@@ -63,6 +63,21 @@ class App::QuestionsController < AppController
     end
   end
   
+  def add_image
+    respond_to do |format|
+      format.js { render 'add_image', locals: { question: @question } }
+    end
+  end
+  
+  def delete_image
+    @question = Question.find(params[:question_id])
+    @question.image.clear
+    @question.save
+    respond_to do |format|
+      format.js { render 'delete_image', locals: { question: @question } }
+    end
+  end
+
   def sort
     params[:question].each_with_index do |id, index|
       Question.find(id).update_attribute(:position, index + 1)
@@ -74,8 +89,9 @@ class App::QuestionsController < AppController
   private
 
   def question_params
-    params.require(:question).permit(:title, :mandatory, :description,
+    params.require(:question).permit(:title, :mandatory, :description, :image,
       :answer_variants_attributes => [:id, :title, :_destroy]
                                     )
   end
+
 end

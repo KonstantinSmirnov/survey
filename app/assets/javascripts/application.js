@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/widgets/sortable
+//= require jquery.remotipart
 //= require tether
 //= require bootstrap-sprockets
 //= require chartkick

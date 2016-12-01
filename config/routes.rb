@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       resources :questions do
         collection { post :sort }
         get 'show_description', to: 'questions#show_description', as: 'show_description'
+        get 'add_image', to: 'questions#add_image', as: 'add_image'
+        delete 'delete_image', to: 'questions#delete_image', as: 'delete_image' 
         resources :answer_variants
       end
     end
