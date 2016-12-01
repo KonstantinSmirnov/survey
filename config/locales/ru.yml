@@ -44,6 +44,10 @@ ru:
     write_here_answer_variant_text: "Напишите здесь вариант ответа"
     write_here_placeholder_text: "Напишите здесь текст подсказки"
     send_answers: "Отправить ответы"
+    reply:
+      thank_you: "Спасибо!"
+      your_answers_will_help_us: "Ваши ответы нам очень помогут!"
+
 
     share:
       title: "Как вы хотите собрать ответы?"
@@ -58,15 +62,17 @@ ru:
 
   footer:
     about_title: "О нас"
-    about_text: "We’ve been working on Go Analytics for the better part of a decade and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at themes@getbootstrap.com."
+    about_text: "Приложение 'Survey' разработано специально для проведения небольших опросов."
     product_title: "Продукт"
     product_features: "Функции"
     product_examples: "Примеры"
     product_tour: "Обзор"
-    legal_title: "LEGAL"
-    legal_terms: "Terms"
-    legal_privacy: "Privacy"
-    legal_agreement: "Agreement"
+    legal_title: "Юридическая информация"
+    legal_terms: "Условия"
+    legal_privacy: "Конфиденциальность"
+    legal_agreement: "Пользовательское соглашение"
+    all_rights_reserved: "Все права защищены!"
+    konstantin_smirnov: "Константин Смирнов"
 
   landing:
     welcome: "Добро пожаловать!"
@@ -74,11 +80,11 @@ ru:
     paragraph2: "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
     paragraph3: "Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur."
     registration: "Registration"
-    how_we_can_help_header: "How we can help you"
+    how_we_can_help_header: "Как мы можем вам помочь?"
     how_we_can_help_point1: "Curabitur blandit tempus porttitor."
     how_we_can_help_point2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     how_we_can_help_point3: "Aenean lacinia bibendum nulla sed consectetur."
-    testimonials_header: "What our clients say"
+    testimonials_header: "Что говорят наши клиенты:"
     testimonials_point1_header: "Donec id elit non mi porta gravida at eget metus."
     testimonials_point1_content: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor."
     testimonials_point2_header: "Maecenas faucibus mollis interdum."

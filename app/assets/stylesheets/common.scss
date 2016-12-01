@@ -64,12 +64,12 @@ section#main {
     object-fit: cover;
   }
   .landing-main-text {
-    margin-top: 15%;
+    margin-top: 80px;
     z-index: 100;
   }
   @media(min-width:768px){
     .landing-main-text {
-      margin-top: 20%;
+      margin-top: 15vh;
       z-index: 100;
     }
   }
@@ -300,4 +300,14 @@ footer {
 
 .color-selected {
   background-color: $lightSelectionColor !important;
+}
+
+.item-hover {
+  display: inline-block;
+  min-height: 64px;
+  border: 1px solid $lightGray;
+  background-color: $lightGray;
+  &:hover {
+    border: 1px solid $medium;
+  }
 }
