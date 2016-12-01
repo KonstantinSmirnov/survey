@@ -1,4 +1,14 @@
 module ApplicationHelper
+  
+  def full_title(page_title)
+    base_title = "Surveys"
+    page_title.empty? ?  base_title : "#{base_title} | #{page_title}"
+  end
+  
+  def meta_tag(tag, text)
+    content_for :"meta_#{tag}", text
+  end
+ 
   def resource_name
     :user
   end

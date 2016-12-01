@@ -1,7 +1,5 @@
-<head>
-  <meta name='title' content="<%= @survey.title %>" />
-  <meta name='description' content="<%= strip_tags(@survey.description) %>" />
-</head>
+<% content_for(:title, @survey.title)%>
+<% meta_tag :description, @survey.description.truncate(140) %>
 
 <div class="user-survey">
   <div class="row">

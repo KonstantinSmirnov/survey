@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Survey</title>
+    <title><%= full_title(yield :title)%></title>
+    <meta name='description' content='<%= meta_tag(:description, 'Default description') %>' />
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
