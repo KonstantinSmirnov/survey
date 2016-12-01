@@ -6,13 +6,13 @@
     <i class="fa fa-pencil question-form-edit"></i>
   <% end %>
   
+  <div class="text-xs-center">
+    <%= image_tag question.image.url(:medium), class: 'form-group' unless question.image.blank? %>
+  </div>
+  
   <div class="form-group">
     <h3><%= question.title.present? ? question.title : t('survey.write_here_question_text') %><%= '*' if question.mandatory %></h3>
     <%= question.description.html_safe unless question.description.blank? %>
-  </div>
-  
-  <div class="form-group text-xs-center">
-    <%= image_tag question.image.url(:medium) unless question.image.blank? %>
   </div>
 
   <div id="question-<%= question.id %>-answer-variants">
