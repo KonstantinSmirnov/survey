@@ -33,6 +33,9 @@ class Visitor::ResponsesController < VisitorController
           selected_point = value.split('-')[-1]
           answer_variant_id = value.split('-')[-2]
           response = Response.create(question_id: question_id, answer_variant_id: answer_variant_id, respondent: respondent, selected_point: selected_point)
+        when "images_single"
+          answer_variant_id = value.split('-').last
+          response = Response.create(question_id: question_id, answer_variant_id: answer_variant_id, respondent: respondent)
         end
       end
 

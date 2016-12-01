@@ -53,4 +53,13 @@
       <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 10
     </label>
   </div>
+<% when 'images_single' %>
+  <div class="col-sm-4">
+    <div class="card">
+      <%= image_tag answer_variant.image.url(:medium), class: "img-fluid" %>
+      <div class="card-block text-xs-center">
+        <input type="radio" name="question-<%= answer_variant.question.id %>">
+      </div>
+    </div>
+  </div>
 <% end %>

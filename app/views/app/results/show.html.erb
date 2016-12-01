@@ -39,7 +39,7 @@
               <% end %>
             <% end %>
           </fieldset>
-          
+
           <!-- SCALE ANSWERS -->
           <% question.answer_variants.each do |answer_variant| %>
             <% case answer_variant.question.question_type %>
@@ -47,6 +47,23 @@
               <h5><%= answer_variant.title %></h5>
               <%= column_chart answer_variant.responses.group(:selected_point).count %>
             <% end %>
+          <% end %>
+
+          <% if question.question_type == "images_single" %>
+            <div class="row">
+              <div class="col-xs-12">
+                <% question.answer_variants.each do |answer_variant| %>
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <%= image_tag answer_variant.image.url(:medium), class: "img-fluid" %>
+                      <div class="card-block text-xs-center">
+                        <%= answer_variant.responses.count %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
           <% end %>
         <% end %>
       <% end %>

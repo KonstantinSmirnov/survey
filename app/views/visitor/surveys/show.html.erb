@@ -3,7 +3,7 @@
 
 <div class="user-survey">
   <div class="row">
-    <div class="offset-md-3 col-md-6">
+    <div class="offset-md-2 col-md-8">
 
       <% if @survey.active? %>
         <h1>
@@ -53,7 +53,7 @@
               <% when "scale" %>
                 <div class="text-xs-center">
                   <%= image_tag question.image.url(:medium), class: 'form-group' unless question.image.blank? %>
-                </div>  
+                </div>
                 <legend><h4><%= question.title %><%= '*' if question.mandatory %></h4></legend>
                 <%= question.description.html_safe unless question.description.blank? %>
                 <% question.answer_variants.each do |answer_variant| %>
@@ -89,6 +89,24 @@
                     <label class="form-check-inline">
                       <input class="form-check-input" type="radio" name="answer-<%= answer_variant.id %>-question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>-10"> 10
                     </label>
+                  </div>
+                <% end %>
+              <% when 'images_single' %>
+                <div class="text-xs-center">
+                  <%= image_tag question.image.url(:medium), class: 'form-group' unless question.image.blank? %>
+                </div>
+                <legend><h4><%= question.title %><%= '*' if question.mandatory %></h4></legend>
+                <%= question.description.html_safe unless question.description.blank? %>
+                <% question.answer_variants.each do |answer_variant| %>
+                  <div class="form-check">
+                    <div class="col-sm-4">
+                      <div class="card">
+                        <%= image_tag answer_variant.image.url(:medium), class: "img-fluid" %>
+                        <div class="card-block text-xs-center">
+                          <input type="radio" name="question-<%= question.id %>" value="answer-variant-<%= answer_variant.id %>">
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 <% end %>
               <% else %>

@@ -35,5 +35,19 @@
       <i class="fa fa-close"></i>
     </span>
   </div>
-  
+<% when "images_single" %>
+    <div class="col-sm-4">
+      <div class="card">
+        <%= f.file_field :image %>
+        <%= image_tag f.object.image.url(:medium), class: "img-fluid" %>
+        <div class="card-block text-xs-center">
+          <%= f.hidden_field :_destroy %>
+          <span class="delete_answer_image_variant">
+            <i class="fa fa-close"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
 <% end %>

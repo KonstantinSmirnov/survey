@@ -31,6 +31,7 @@
           <%= link_to image_tag('checkbox_list', size: "64x64"), app_survey_questions_path(@survey, question_type: 'multiply'), method: :post, remote: true, class: 'item-hover', "data-dismiss" => "modal", title: "#{t('survey.multiply_question')}" %>
           <%= link_to image_tag('text', size: "64x64"), app_survey_questions_path(@survey, question_type: 'text'), method: :post, remote: true, class: 'item-hover', "data-dismiss" => "modal", title: "#{t('survey.text_question')}" %>
           <%= link_to image_tag('points', size: "64x64"), app_survey_questions_path(@survey, question_type: 'scale'), method: :post, remote: true, class: 'item-hover', "data-dismiss" => "modal", title: "#{t('survey.scale_question')}" %>
+          <%= link_to image_tag('images_single', size: "64x64"), app_survey_questions_path(@survey, question_type: 'images_single'), method: :post, remote: true, class: 'item-hover', "data-dismiss" => "modal", title: "#{t('survey.image_single_question')}" %>
         </div>
       </div>
     </div>

@@ -24,6 +24,9 @@ class App::QuestionsController < AppController
     when "scale"
       @question.scale!
       @question.answer_variants.create(title: "")
+    when "images_single"
+      @question.images_single!
+      3.times { @question.answer_variants.create(title: "") }
     end
     @question.save
     respond_to do |format|
@@ -62,13 +65,13 @@ class App::QuestionsController < AppController
       format.js { render 'show_description', locals: { question: @question } }
     end
   end
-  
+
   def add_image
     respond_to do |format|
       format.js { render 'add_image', locals: { question: @question } }
     end
   end
-  
+
   def delete_image
     @question = Question.find(params[:question_id])
     @question.image.clear
@@ -82,7 +85,7 @@ class App::QuestionsController < AppController
     params[:question].each_with_index do |id, index|
       Question.find(id).update_attribute(:position, index + 1)
     end
-    
+
     render nothing: true
   end
 
@@ -90,7 +93,7 @@ class App::QuestionsController < AppController
 
   def question_params
     params.require(:question).permit(:title, :mandatory, :description, :image,
-      :answer_variants_attributes => [:id, :title, :_destroy]
+      :answer_variants_attributes => [:id, :title, :image, :_destroy]
                                     )
   end
 
