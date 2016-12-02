@@ -17,7 +17,7 @@
               <% case question.question_type %>
               <% when "single" %>
                 <div class="text-xs-center">
-                  <%= image_tag question.image.url(:medium), class: 'form-group' unless question.image.blank? %>
+                  <%= image_tag question.image.url(:medium), class: 'form-group img-fluid' unless question.image.blank? %>
                 </div>
                 <legend><h4><%= question.title %><%= '*' if question.mandatory %></h4></legend>
                 <%= question.description.html_safe unless question.description.blank? %>
@@ -31,7 +31,7 @@
                 <% end %>
               <% when "multiply" %>
                 <div class="text-xs-center">
-                  <%= image_tag question.image.url(:medium), class: 'form-group' unless question.image.blank? %>
+                  <%= image_tag question.image.url(:medium), class: 'form-group img-fluid' unless question.image.blank? %>
                 </div>
                 <legend><h4><%= question.title %><%= '*' if question.mandatory %></h4></legend>
                 <%= question.description.html_safe unless question.description.blank? %>
@@ -45,14 +45,14 @@
                 <% end %>
               <% when "text" %>
                 <div class="text-xs-center">
-                  <%= image_tag question.image.url(:medium), class: 'form-group' unless question.image.blank? %>
+                  <%= image_tag question.image.url(:medium), class: 'form-group img-fluid' unless question.image.blank? %>
                 </div>
                 <label for="question-<%= question.id %>"><h4><%= question.title %><%= '*' if question.mandatory %></h4></label>
                 <%= question.description.html_safe unless question.description.blank? %>
                 <textarea class="form-control" id="question-<%= question.id %>" rows="3" name="question-<%= question.id %>" placeholder="<%= question.answer_variants.first.title %>"></textarea>
               <% when "scale" %>
                 <div class="text-xs-center">
-                  <%= image_tag question.image.url(:medium), class: 'form-group' unless question.image.blank? %>
+                  <%= image_tag question.image.url(:medium), class: 'form-group img-fluid' unless question.image.blank? %>
                 </div>
                 <legend><h4><%= question.title %><%= '*' if question.mandatory %></h4></legend>
                 <%= question.description.html_safe unless question.description.blank? %>
