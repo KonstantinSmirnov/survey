@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20161201195335) do
     t.string   "title"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.integer  "answer_type"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -30,13 +29,11 @@ ActiveRecord::Schema.define(version: 20161201195335) do
   create_table "questions", force: :cascade do |t|
     t.integer  "survey_id"
     t.string   "title"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.integer  "question_type",          default: 0
-    t.boolean  "mandatory",              default: true
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.integer  "question_type",      default: 0
+    t.boolean  "mandatory",          default: true
     t.text     "description"
-    t.boolean  "has_open_answer",        default: false
-    t.integer  "open_answer_variant_id"
     t.integer  "position"
     t.string   "image_file_name"
     t.string   "image_content_type"

@@ -14,16 +14,13 @@
       </div>
     <% else %>
       <div class="form-group" id="question-<%= question.id %>-image">
-        <%= render partial: 'question_image', locals: { f: f } unless question.description.blank? %>
       </div>
       <div id="question-<%= question.id %>-add-image-link">
         <%= link_to t('survey.add_image'), app_survey_question_add_image_path(question.survey, question), remote: true %>
       </div>
     <% end %>
   </div>
-  <div class="form-group" id="question-<%= question.id %>-image">
-    <%= render partial: 'question_image', locals: { f: f } unless question.description.blank? %>
-  </div>
+
   <div class="form-group" id="question-<%= question.id %>-add-description-link">
     <% if question.description.blank? %>
       <%= link_to t('survey.add_description'), app_survey_question_show_description_path(question.survey, question), remote: true %>
