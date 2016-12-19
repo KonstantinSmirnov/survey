@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Add in .env file:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+SURVEY_DATABASE_PASSWORD=
+SECRET_KEY_BASE=
+DEVISE_SECRET_KEY=
+SMTP_USER_NAME=
+SMTP_PASSWORD=
+FACEBOOK_APP_ID=
