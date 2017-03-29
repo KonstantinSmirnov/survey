@@ -46,9 +46,9 @@ en:
   survey:
     answer_variants: "Answer variants"
     add_answer_variant: "Add variant"
-    single_question: "Single"
-    multiply_question: "Multiply"
-    text_question: "Text"
+    single_question: "Single option question"
+    multiply_question: "Multiply options question"
+    text_question: "Open question"
     edit_survey: "Edit survey"
     select_question_type: "Select question type"
     respondents: "Respondents"
@@ -61,7 +61,7 @@ en:
 
     share:
       title: "How do you want to gather answers?"
-      paragraph: "Copy this link and send your respondents via email:"
+      paragraph: "Copy this link and send it to your respondents via email:"
 
     results:
       respondents: "respondents passed your survey!"
